@@ -77,7 +77,7 @@
       <a
         class="nav-link dropdown-toggle"
         (click)="sideNavService.toggleAlert()"
-        (mouseout)="sideNavService.toggleAlert()"
+        (mouseout)="sideNavService.toggleHideAlert()"
         id="alertsDropdown"
         role="button"
         data-toggle="dropdown"
@@ -142,7 +142,7 @@
       <a
         class="nav-link dropdown-toggle"
         (click)="sideNavService.toggleMessage()"
-        (mouseout)="sideNavService.toggleMessage()"
+        (mouseout)="sideNavService.toggleHideMessage()"
         id="messagesDropdown"
         role="button"
         data-toggle="dropdown"
@@ -229,7 +229,7 @@
       <a
         class="nav-link dropdown-toggle"
         (click)="sideNavService.toggleProfile()"
-        (mouseout)="sideNavService.toggleProfile()"
+        (mouseout)="sideNavService.toggleHideProfile()"
         id="userDropdown"
         role="button"
         data-toggle="dropdown"
