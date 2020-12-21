@@ -9,7 +9,7 @@
     href="index.html"
   >
     <div class="sidebar-brand-icon">
-      <img src="../../../assets/Images/interview.png" width="60" height="60" />
+      <img src="../../../assets/Images/interview.png" width="40" height="40" />
     </div>
     <div class="sidebar-brand-text mx-3" style="text-transform: none">
       techBlog
@@ -20,7 +20,7 @@
   <hr class="sidebar-divider my-0" />
 
   <!-- Nav Item - Dashboard -->
-  <li class="nav-item active">
+  <li class="nav-item" routerLinkActive="active">
     <a class="nav-link" routerLink="dashboard">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Dashboard</span></a
@@ -34,7 +34,7 @@
   <div class="sidebar-heading">Interface</div>
 
   <!-- Nav Item - Pages Collapse Menu -->
-  <li class="nav-item">
+  <li class="nav-item" routerLinkActive="active">
     <a
       class="nav-link collapsed"
       data-toggle="collapse"
@@ -55,10 +55,18 @@
     >
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">.Net Interviews</h6>
-        <a class="collapse-item" routerLink="csharp" routerLinkActive="active"
+        <a
+          class="collapse-item"
+          routerLink="csharp"
+          routerLinkActive="active"
+          (mouseout)="sideNavService.togglePage()"
           >40 C#</a
         >
-        <a class="collapse-item" routerLink="oops" routerLinkActive="active"
+        <a
+          class="collapse-item"
+          routerLink="oops"
+          routerLinkActive="active"
+          (mouseout)="sideNavService.togglePage()"
           >38 Opps</a
         >
 
@@ -72,7 +80,7 @@
   </li>
 
   <!-- Nav Item - Utilities Collapse Menu -->
-  <li class="nav-item">
+  <li class="nav-item" routerLinkActive="active">
     <a
       class="nav-link collapsed"
       href="#"
@@ -107,7 +115,7 @@
   <div class="sidebar-heading">Addons</div>
 
   <!-- Nav Item - Pages Collapse Menu -->
-  <li class="nav-item">
+  <li class="nav-item" routerLinkActive="active">
     <a
       class="nav-link collapsed"
       href="#"
@@ -139,7 +147,7 @@
   </li>
 
   <!-- Nav Item - Charts -->
-  <li class="nav-item">
+  <li class="nav-item" routerLinkActive="active">
     <a class="nav-link" href="charts.html">
       <i class="fas fa-fw fa-chart-area"></i>
       <span>Charts</span></a
@@ -147,7 +155,7 @@
   </li>
 
   <!-- Nav Item - Tables -->
-  <li class="nav-item">
+  <li class="nav-item" routerLinkActive="active">
     <a class="nav-link" href="tables.html">
       <i class="fas fa-fw fa-table"></i>
       <span>Tables</span></a

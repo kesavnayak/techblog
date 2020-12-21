@@ -9,6 +9,7 @@ export class SidenavService {
   hideMessage: boolean = false;
   hideProfile: boolean = false;
   hidePage: boolean = false;
+  hideQuestion: boolean = false;
 
   constructor() {}
 
@@ -30,5 +31,9 @@ export class SidenavService {
 
   togglePage(): void {
     this.hidePage = !this.hidePage;
+  }
+
+  toggleQuestion(): void {
+    this.hideQuestion = !this.hideQuestion;
   }
 }

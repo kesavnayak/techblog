@@ -1,1 +1,169 @@
-<p>oops works!</p>
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Oops Interview Question & Answer</h1>
+</div>
+
+<!-- Content Row -->
+
+<div class="row">
+  <!-- Area Chart -->
+  <div class="col-xl-8 col-lg-7">
+    <div class="card shadow mb-4">
+      <!-- Card Header - Dropdown -->
+      <div
+        class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+      >
+        <h6 class="m-0 font-weight-bold text-primary">What is Class?</h6>
+        <div class="dropdown no-arrow">
+          <a
+            class="dropdown-toggle"
+            (click)="sideNavService.toggleQuestion()"
+            (mouseout)="sideNavService.toggleQuestion()"
+            role="button"
+            id="dropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+          </a>
+          <div
+            class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+            aria-labelledby="dropdownMenuLink"
+            [ngClass]="{ show: sideNavService.hideQuestion }"
+          >
+            <div class="dropdown-header">Dropdown Header:</div>
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card Body -->
+      <div class="card-body">
+        <p>
+          A class is a collection of objects and represents a description of
+          objects that share same attributes and actions. It contains
+          characteristics of the objects such as objects attributes, actions or
+          behaviors.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <!-- Area Chart -->
+  <div class="col-xl-8 col-lg-7">
+    <div class="card shadow mb-4">
+      <!-- Card Header - Dropdown -->
+      <div
+        class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+      >
+        <h6 class="m-0 font-weight-bold text-primary">
+          What is Abstract Class?
+        </h6>
+        <div class="dropdown no-arrow">
+          <a
+            class="dropdown-toggle"
+            href="#"
+            role="button"
+            id="dropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+          </a>
+          <div
+            class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+            aria-labelledby="dropdownMenuLink"
+          >
+            <div class="dropdown-header">Dropdown Header:</div>
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card Body -->
+      <div class="card-body">
+        <p>
+          An Abstract Class means that no object of this class can be
+          instantiated, but can make the derivation of this. It can serve the
+          purpose of base class only as no object of this class can be created.
+          The abstract class is a special type of class which cannot be
+          instantiated and acts as a base class for other classes. Abstract
+          class members marked as abstract must be implemented by derived
+          classes Abstract Class is denoted by the keyword abstract.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <!-- Area Chart -->
+  <div class="col-xl-8 col-lg-7">
+    <div class="card shadow mb-4">
+      <!-- Card Header - Dropdown -->
+      <div
+        class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+      >
+        <h6 class="m-0 font-weight-bold text-primary">
+          What is Abstract Method?
+        </h6>
+        <div class="dropdown no-arrow">
+          <a
+            class="dropdown-toggle"
+            href="#"
+            role="button"
+            id="dropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+          </a>
+          <div
+            class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+            aria-labelledby="dropdownMenuLink"
+          >
+            <div class="dropdown-header">Dropdown Header:</div>
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card Body -->
+      <div class="card-body">
+        <app-pretag
+          [Text]="
+            'public abstract class ClassA
+{
+  public abstract void foo()
+  {
+    Console.WriteLine(\'Abstract ClassA\');
+    //\'Abstract_Class.ClassA.foo()\' 
+    cannot declare a body because it is marked abstract
+  }
+}'
+          "
+        ></app-pretag>
+        <p>
+          When a method is declared as abstract in the base class then every
+          derived class of that class must provide its own definition for that
+          method. The purpose of an abstract class is to provide basic or
+          default functionality as well as common functionality that multiple
+          derived classes can share and override. Child classes use keyword
+          “override” with same method name (as abstract method name) to provide
+          the further implementation of abstract methods.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

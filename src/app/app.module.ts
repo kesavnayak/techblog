@@ -10,6 +10,7 @@ import { DashboardComponent } from './UI/dashboard/dashboard.component';
 import { ScrollTopComponent } from './plugin/scroll-top/scroll-top.component';
 import { CsharpComponent } from './UI/csharp/csharp.component';
 import { OopsComponent } from './UI/oops/oops.component';
+import { PretagComponent } from './plugin/pretag/pretag.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { OopsComponent } from './UI/oops/oops.component';
     ScrollTopComponent,
     CsharpComponent,
     OopsComponent,
+    PretagComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

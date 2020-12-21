@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SidenavService } from './sidebar/sidenav.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Blog';
+
+  constructor(public sideNavService: SidenavService) {}
 }
