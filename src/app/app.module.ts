@@ -11,6 +11,7 @@ import { ScrollTopComponent } from './plugin/scroll-top/scroll-top.component';
 import { CsharpComponent } from './UI/csharp/csharp.component';
 import { OopsComponent } from './UI/oops/oops.component';
 import { PretagComponent } from './plugin/pretag/pretag.component';
+import { InterviewquestionsComponent } from './UI/interviewquestions/interviewquestions.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PretagComponent } from './plugin/pretag/pretag.component';
     CsharpComponent,
     OopsComponent,
     PretagComponent,
+    InterviewquestionsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
