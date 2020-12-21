@@ -12,6 +12,9 @@ import { CsharpComponent } from './UI/csharp/csharp.component';
 import { OopsComponent } from './UI/oops/oops.component';
 import { PretagComponent } from './plugin/pretag/pretag.component';
 import { InterviewquestionsComponent } from './UI/interviewquestions/interviewquestions.component';
+import { MainComponent } from './main/main.component';
+import { LoginComponent } from './UI/login/login.component';
+import { SignupComponent } from './UI/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { InterviewquestionsComponent } from './UI/interviewquestions/interviewqu
     OopsComponent,
     PretagComponent,
     InterviewquestionsComponent,
+    MainComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
