@@ -20,6 +20,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { CompanyquestionsComponent } from './UI/companyquestions/companyquestions.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     MainComponent,
     LoginComponent,
     SignupComponent,
+    CompanyquestionsComponent,
   ],
   imports: [
     BrowserModule,

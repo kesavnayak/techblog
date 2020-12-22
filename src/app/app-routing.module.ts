@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
+import { CompanyquestionsComponent } from './UI/companyquestions/companyquestions.component';
 import { CsharpComponent } from './UI/csharp/csharp.component';
 import { DashboardComponent } from './UI/dashboard/dashboard.component';
 import { InterviewquestionsComponent } from './UI/interviewquestions/interviewquestions.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: 'interview/csharp', component: CsharpComponent },
       { path: 'interview/oops', component: OopsComponent },
       { path: 'interview', component: InterviewquestionsComponent },
+      { path: 'company', component: CompanyquestionsComponent },
     ],
   },
   { path: 'login', component: LoginComponent },
