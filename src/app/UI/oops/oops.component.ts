@@ -25,7 +25,7 @@ export class OopsComponent implements OnInit {
           questionId: e.payload.doc.id,
           questionDesc: e.payload.doc.data()['QuestionDesc'],
           questionText: e.payload.doc.data()['QuestionText'],
-          questionCategoryId: e.payload.doc.data()['questionCategoryId'],
+          questionCategoryId: e.payload.doc.data()['QuestionCategoryId'],
         };
       });
 
