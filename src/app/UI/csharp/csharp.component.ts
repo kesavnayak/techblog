@@ -28,7 +28,6 @@ export class CsharpComponent implements OnInit {
           questionCategoryId: e.payload.doc.data()['QuestionCategoryId'],
         };
       });
-      debugger;
       this.questions = this.questions.filter(
         (item) => item.questionCategoryId === 'DNjpYNC4BEohx0NhcQuR'
       );
