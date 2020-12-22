@@ -31,12 +31,16 @@
   <hr class="sidebar-divider" />
 
   <!-- Heading -->
-  <div class="sidebar-heading">Interface</div>
+  <div class="sidebar-heading">Category</div>
 
-  <li class="nav-item" routerLinkActive="active">
-    <a class="nav-link" routerLink="interview">
-      <i class="fas fa-receipt"></i>
-      <span>Interview Questions</span>
+  <li
+    class="nav-item"
+    routerLinkActive="active"
+    *ngFor="let category of categories"
+  >
+    <a class="nav-link" routerLink="{{ category.categoryLink }}">
+      <i class="{{ category.categoryIcon }}"></i>
+      <span>{{ category.categoryName }}</span>
     </a>
   </li>
 

@@ -16,6 +16,11 @@ import { MainComponent } from './main/main.component';
 import { LoginComponent } from './UI/login/login.component';
 import { SignupComponent } from './UI/signup/signup.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +37,13 @@ import { SignupComponent } from './UI/signup/signup.component';
     LoginComponent,
     SignupComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
