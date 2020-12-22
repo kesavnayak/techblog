@@ -3,246 +3,45 @@
   <h1 class="h3 mb-0 text-gray-800">Oops Interview Question & Answer</h1>
 </div>
 
-<!-- Content Row -->
-
 <div class="row">
-  <!-- Area Chart -->
-  <div class="col-xl-8 col-lg-7">
-    <div class="card shadow mb-4">
-      <!-- Card Header - Dropdown -->
-      <div
-        class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
-      >
-        <h6 class="m-0 font-weight-bold text-primary">What is Class?</h6>
-        <div class="dropdown no-arrow">
-          <a
-            class="dropdown-toggle"
-            (click)="sideNavService.toggleQuestion()"
-            role="button"
-            id="dropdownMenuLink"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-          </a>
-          <div
-            class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-            aria-labelledby="dropdownMenuLink"
-            [ngClass]="{ show: sideNavService.hideQuestion }"
-          >
-            <div class="dropdown-header">Dropdown Header:</div>
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+  <div class="row" *ngFor="let question of questions">
+    <!-- Area Chart -->
+    <div class="col-xl-8 col-lg-7">
+      <div class="card shadow mb-4">
+        <!-- Card Header - Dropdown -->
+        <div
+          class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+        >
+          <h6 class="m-0 font-weight-bold text-primary">
+            {{ question.questionText }}
+          </h6>
+          <div class="dropdown no-arrow">
+            <a
+              class="dropdown-toggle"
+              (click)="sideNavService.toggleQuestion()"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+            </a>
+            <div
+              class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+              aria-labelledby="dropdownMenuLink"
+              [ngClass]="{ show: sideNavService.hideQuestion }"
+            >
+              <div class="dropdown-header">Dropdown Header:</div>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Card Body -->
-      <div class="card-body">
-        <p>
-          A class is a collection of objects and represents a description of
-          objects that share same attributes and actions. It contains
-          characteristics of the objects such as objects attributes, actions or
-          behaviors.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <!-- Area Chart -->
-  <div class="col-xl-8 col-lg-7">
-    <div class="card shadow mb-4">
-      <!-- Card Header - Dropdown -->
-      <div
-        class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
-      >
-        <h6 class="m-0 font-weight-bold text-primary">
-          What is Abstract Class?
-        </h6>
-        <div class="dropdown no-arrow">
-          <a
-            class="dropdown-toggle"
-            href="#"
-            role="button"
-            id="dropdownMenuLink"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-          </a>
-          <div
-            class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-            aria-labelledby="dropdownMenuLink"
-          >
-            <div class="dropdown-header">Dropdown Header:</div>
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
-      </div>
-      <!-- Card Body -->
-      <div class="card-body">
-        <p>
-          An Abstract Class means that no object of this class can be
-          instantiated, but can make the derivation of this. It can serve the
-          purpose of base class only as no object of this class can be created.
-          The abstract class is a special type of class which cannot be
-          instantiated and acts as a base class for other classes. Abstract
-          class members marked as abstract must be implemented by derived
-          classes Abstract Class is denoted by the keyword abstract.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <!-- Area Chart -->
-  <div class="col-xl-8 col-lg-7">
-    <div class="card shadow mb-4">
-      <!-- Card Header - Dropdown -->
-      <div
-        class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
-      >
-        <h6 class="m-0 font-weight-bold text-primary">
-          What is Abstract Method?
-        </h6>
-        <div class="dropdown no-arrow">
-          <a
-            class="dropdown-toggle"
-            href="#"
-            role="button"
-            id="dropdownMenuLink"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-          </a>
-          <div
-            class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-            aria-labelledby="dropdownMenuLink"
-          >
-            <div class="dropdown-header">Dropdown Header:</div>
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
-      </div>
-      <!-- Card Body -->
-      <div class="card-body">
-        <app-pretag
-          [Text]="
-            'public abstract class ClassA
-{
-  public abstract void foo()
-  {
-    Console.WriteLine(\'Abstract ClassA\');
-    //\'Abstract_Class.ClassA.foo()\' 
-    cannot declare a body because it is marked abstract
-  }
-}'
-          "
-        ></app-pretag>
-        <p>
-          When a method is declared as abstract in the base class then every
-          derived class of that class must provide its own definition for that
-          method. The purpose of an abstract class is to provide basic or
-          default functionality as well as common functionality that multiple
-          derived classes can share and override. Child classes use keyword
-          “override” with same method name (as abstract method name) to provide
-          the further implementation of abstract methods.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <!-- Area Chart -->
-  <div class="col-xl-8 col-lg-7">
-    <div class="card shadow mb-4">
-      <!-- Card Header - Dropdown -->
-      <div
-        class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
-      >
-        <h6 class="m-0 font-weight-bold text-primary">
-          What are the Features of Abstract Class?
-        </h6>
-        <div class="dropdown no-arrow">
-          <a
-            class="dropdown-toggle"
-            href="#"
-            role="button"
-            id="dropdownMenuLink"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-          </a>
-          <div
-            class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-            aria-labelledby="dropdownMenuLink"
-          >
-            <div class="dropdown-header">Dropdown Header:</div>
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
-      </div>
-      <!-- Card Body -->
-      <div class="card-body">
-        <h6>Features of Abstract Class</h6>
-        <ul>
-          <li>An abstract class or interface cannot be instantiated.</li>
-          <li>
-            An abstract class contains abstract members as well as non-abstract
-            members.
-          </li>
-          <li>
-            An abstract class cannot be a sealed class, static class because the
-            sealed modifier prevents a class from being inherited and the
-            abstract modifier requires a class to be inherited.
-          </li>
-          <li>
-            A non-abstract class which is derived from an abstract class must
-            include actual implementations of all the abstract members of parent
-            abstract class.
-          </li>
-          <li>An abstract method is implicitly a virtual method.</li>
-          <li>
-            An abstract class can be inherited from a class and one or more
-            interfaces.
-          </li>
-          <li>
-            An Abstract class can have access modifiers like private, protected,
-            internal with class members. But abstract members cannot have a
-            private access modifier.
-          </li>
-          <li>
-            An Abstract class can have instance variables (like constants and
-            fields ).
-          </li>
-          <li>
-            An abstract class can have constructors and destructor.(Except
-            Private constructor).
-          </li>
-          <li>Abstract properties behave like abstract methods.</li>
-          <li>An abstract class cannot be inherited by structures.</li>
-          <li>An abstract class cannot support multiple inheritances.</li>
-        </ul>
+        <!-- Card Body -->
+        <div class="card-body" [innerHTML]="question.questionDesc"></div>
       </div>
     </div>
   </div>

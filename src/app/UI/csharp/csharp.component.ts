@@ -28,6 +28,10 @@ export class CsharpComponent implements OnInit {
           questionCategoryId: e.payload.doc.data()['questionCategoryId'],
         };
       });
+
+      this.questions = this.questions.filter(
+        (item) => item.questionCategoryId === 'DNjpYNC4BEohx0NhcQuR'
+      );
       console.log(this.questions);
     });
   }
