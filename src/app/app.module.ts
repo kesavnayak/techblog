@@ -21,6 +21,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { CompanyquestionsComponent } from './UI/companyquestions/companyquestions.component';
+import { AngularComponent } from './UI/angular/angular.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CompanyquestionsComponent } from './UI/companyquestions/companyquestion
     LoginComponent,
     SignupComponent,
     CompanyquestionsComponent,
+    AngularComponent,
   ],
   imports: [
     BrowserModule,

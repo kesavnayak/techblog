@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
+import { AngularComponent } from './UI/angular/angular.component';
 import { CompanyquestionsComponent } from './UI/companyquestions/companyquestions.component';
 import { CsharpComponent } from './UI/csharp/csharp.component';
 import { DashboardComponent } from './UI/dashboard/dashboard.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'interview/csharp', component: CsharpComponent },
       { path: 'interview/oops', component: OopsComponent },
+      { path: 'interview/angular', component: AngularComponent },
       { path: 'interview', component: InterviewquestionsComponent },
       { path: 'company', component: CompanyquestionsComponent },
     ],
