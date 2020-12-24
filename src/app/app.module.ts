@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar/sidebar.component';
@@ -22,6 +25,8 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { CompanyquestionsComponent } from './UI/companyquestions/companyquestions.component';
 import { AngularComponent } from './UI/angular/angular.component';
+import { MustMatchDirective } from './directive/must-match.directive';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -40,6 +45,7 @@ import { AngularComponent } from './UI/angular/angular.component';
     SignupComponent,
     CompanyquestionsComponent,
     AngularComponent,
+    MustMatchDirective,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +53,10 @@ import { AngularComponent } from './UI/angular/angular.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFireModule,
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

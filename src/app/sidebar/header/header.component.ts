@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { LoginService } from 'src/app/service/login.service';
 import { SidenavService } from '../sidenav.service';
 @Component({
   selector: 'app-header',
@@ -6,7 +7,14 @@ import { SidenavService } from '../sidenav.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(public sideNavService: SidenavService) {}
+  constructor(
+    public sideNavService: SidenavService,
+    public loginService: LoginService
+  ) {}
 
   ngOnInit(): void {}
+
+  logout() {
+    this.loginService.logout();
+  }
 }

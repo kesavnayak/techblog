@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "techblog-75ac4": {
+      "hosting": {
+        "Blog": [
+          "techblog-75ac4"
+        ]
+      }
+    }
+  }
+}

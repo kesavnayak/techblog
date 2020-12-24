@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Category } from 'src/app/model/category';
 import { CategoryService } from 'src/app/service/category.service';
+import { LoginService } from 'src/app/service/login.service';
 import { SidenavService } from '../sidenav.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class SidebarComponent implements OnInit {
   public categories: any;
   constructor(
     public sideNavService: SidenavService,
-    public categoryService: CategoryService
+    public categoryService: CategoryService,
+    public loginService: LoginService
   ) {}
 
   ngOnInit(): void {
@@ -29,7 +31,6 @@ export class SidebarComponent implements OnInit {
           categoryLink: e.payload.doc.data()['CategoryLink'],
         };
       });
-      console.log(this.categories);
     });
   }
 }
