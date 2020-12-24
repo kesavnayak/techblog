@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/service/login.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -8,7 +9,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
-  constructor(private loginService: LoginService) {}
+  public loading: boolean = false;
+
+  constructor(public loginService: LoginService, public router: Router) {}
 
   model: any = {};
 
@@ -17,4 +20,13 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  loginViaGoogle() {
+    this.loading = true;
+    this.loginService.loginViaGoogle().subscribe((res) => {
+      this.loginService.authStore();
+      this.loading = false;
+      this.router.navigate(['']);
+    });
+  }
 }

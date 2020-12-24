@@ -8,7 +8,8 @@ import { LoginService } from 'src/app/service/login.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private loginService: LoginService, public router: Router) {}
+  public loading: boolean = false;
+  constructor(public loginService: LoginService, public router: Router) {}
 
   ngOnInit(): void {}
 
@@ -19,8 +20,10 @@ export class LoginComponent implements OnInit {
   }
 
   loginViaGoogle() {
+    this.loading = true;
     this.loginService.loginViaGoogle().subscribe((res) => {
       this.loginService.authStore();
+      this.loading = false;
       this.router.navigate(['']);
     });
   }

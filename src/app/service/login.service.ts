@@ -10,6 +10,7 @@ import { from, Observable } from 'rxjs';
 })
 export class LoginService {
   user: User;
+  loading: boolean = false;
 
   constructor(public afAuth: AngularFireAuth, public router: Router) {}
 
@@ -25,7 +26,6 @@ export class LoginService {
 
   authStore() {
     this.afAuth.authState.subscribe((user) => {
-      debugger;
       if (user) {
         localStorage.setItem('user', JSON.stringify(user));
       } else {
@@ -39,27 +39,35 @@ export class LoginService {
   }
 
   async login(model: any) {
+    this.loading = true;
     var result = await this.afAuth.signInWithEmailAndPassword(
       model.email,
       model.password
     );
-    //localStorage.setItem('user', JSON.stringify(model.));
-    this.authStore();
-    this.router.navigate(['']);
+    if (result != null) {
+      this.authStore();
+      this.loading = false;
+      this.router.navigate(['']);
+    }
   }
 
   async register(model: any) {
+    this.loading = true;
     var result = await this.afAuth.createUserWithEmailAndPassword(
       model.email,
       model.password
     );
-    this.router.navigate(['login']);
+    if (result != null) {
+      this.loading = false;
+      this.router.navigate(['login']);
+    }
   }
 
   async logout() {
-    await this.afAuth.signOut();
-    localStorage.removeItem('user');
-    this.router.navigate(['']);
+    await this.afAuth.signOut().then(() => {
+      localStorage.removeItem('user');
+      this.router.navigate(['']);
+    });
   }
 
   loginViaGoogle(): Observable<auth.default.auth.UserCredential> {

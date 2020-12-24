@@ -1,6 +1,10 @@
 <div class="container">
   <div class="card o-hidden border-0 shadow-lg my-5">
     <div class="card-body p-0">
+      <div class="text-right" routerLink="login" style="padding: 10px">
+        <i class="far fa-times-circle fa-2x"></i>
+      </div>
+
       <!-- Nested Row within Card Body -->
       <div class="row">
         <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
@@ -139,7 +143,13 @@
                   </div>
                 </div>
               </div>
+
               <button class="btn btn-primary btn-user btn-block">
+                <i
+                  class="fa fa-spinner fa-fw fa-spin"
+                  style="font-size: 15px"
+                  *ngIf="loginService.loading"
+                ></i>
                 Register Account
               </button>
               <button class="btn btn-primary btn-user btn-block" type="reset">
@@ -147,9 +157,17 @@
               </button>
             </form>
             <hr />
-            <a href="index.html" class="btn btn-google btn-user btn-block">
-              <i class="fab fa-google fa-fw"></i> Register with Google
-            </a>
+            <button
+              (click)="loginViaGoogle()"
+              class="btn btn-google btn-user btn-block"
+            >
+              <i
+                class="fa fa-spinner fa-fw fa-spin"
+                style="font-size: 15px"
+                *ngIf="loading"
+              ></i>
+              <i class="fab fa-google fa-fw"></i> Register with Google }}
+            </button>
             <a href="index.html" class="btn btn-facebook btn-user btn-block">
               <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
             </a>
