@@ -26,13 +26,13 @@ export class AngularComponent implements OnInit {
           questionDesc: e.payload.doc.data()['QuestionDesc'],
           questionText: e.payload.doc.data()['QuestionText'],
           questionCategoryId: e.payload.doc.data()['QuestionCategoryId'],
+          questionNo: e.payload.doc.data()['QuestionNo'],
         };
       });
 
-      this.questions = this.questions.filter(
-        (item) => item.questionCategoryId === 'Dh12FZmsQtghhLPqZFjs'
-      );
-      console.log(this.questions);
+      this.questions = this.questions
+        .filter((item) => item.questionCategoryId === 'Dh12FZmsQtghhLPqZFjs')
+        .sort((item1, item2) => (item1.questionNo > item2.questionNo ? 1 : -1));
     });
   }
 }
