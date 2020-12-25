@@ -3,4 +3,5 @@ export class Question {
   public questionText: string;
   public questionCategoryId: string;
   public questionNo: number;
+  public iscollapse: string;
 }

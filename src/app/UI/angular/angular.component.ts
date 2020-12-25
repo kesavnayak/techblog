@@ -27,6 +27,7 @@ export class AngularComponent implements OnInit {
           questionText: e.payload.doc.data()['QuestionText'],
           questionCategoryId: e.payload.doc.data()['QuestionCategoryId'],
           questionNo: e.payload.doc.data()['QuestionNo'],
+          iscollapse: e.payload.doc.data()['IsCollapse'],
         };
       });
 
