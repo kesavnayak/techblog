@@ -27,6 +27,7 @@ import { CompanyquestionsComponent } from './UI/companyquestions/companyquestion
 import { AngularComponent } from './UI/angular/angular.component';
 import { MustMatchDirective } from './directive/must-match.directive';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { CoreComponent } from './UI/core/core.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     CompanyquestionsComponent,
     AngularComponent,
     MustMatchDirective,
+    CoreComponent,
   ],
   imports: [
     BrowserModule,
