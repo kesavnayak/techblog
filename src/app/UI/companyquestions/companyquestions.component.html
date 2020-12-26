@@ -56,16 +56,37 @@
             data-parent="#accordionExample"
           >
             <div class="card-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life
-              accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-              cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-              laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-              on it squid single-origin coffee nulla assumenda shoreditch et.
-              Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-              nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-              lomo. Leggings occaecat craft beer farm-to-table, raw denim
-              aesthetic synth nesciunt you probably haven't heard of them
-              accusamus labore sustainable VHS.
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Data direction</th>
+                    <th>Syntax</th>
+                    <th>Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>From the source-to-view(One-way)</td>
+                    <td>
+                      1. {{ "expression" }} 2. [target]="expression" 3.
+                      bind-target="expression"
+                    </td>
+                    <td>Interpolation, Property, Attribute, Class, Style</td>
+                  </tr>
+                  <tr>
+                    <td>From view-to-source(One-way)</td>
+                    <td>1. (target)="statement" 2. on-target="statement"</td>
+                    <td>Event</td>
+                  </tr>
+                  <tr>
+                    <td>View-to-source-to-view(Two-way)</td>
+                    <td>
+                      1. [(target)]="expression" 2. bindon-target="expression"
+                    </td>
+                    <td>Two-way</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
