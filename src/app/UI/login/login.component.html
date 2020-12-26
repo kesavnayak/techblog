@@ -89,9 +89,10 @@
                   </button>
                 </form>
                 <hr />
-                <button
+                <a
                   (click)="loginViaGoogle()"
                   class="btn btn-google btn-user btn-block"
+                  target="_self"
                 >
                   <i
                     class="fa fa-spinner fa-fw fa-spin"
@@ -99,10 +100,11 @@
                     *ngIf="loading"
                   ></i>
                   <i class="fab fa-google fa-fw"></i> Register with Google
-                </button>
+                </a>
                 <a
                   href="index.html"
                   class="btn btn-facebook btn-user btn-block"
+                  target="_self"
                 >
                   <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
                 </a>
