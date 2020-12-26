@@ -38,7 +38,11 @@
     routerLinkActive="active"
     *ngFor="let category of categories"
   >
-    <a class="nav-link" routerLink="{{ category.categoryLink }}">
+    <a
+      class="nav-link"
+      routerLink="{{ category.categoryLink }}"
+      (click)="sideNavService.hideShowSideNav()"
+    >
       <i class="{{ category.categoryIcon }}"></i>
       <span>{{ category.categoryName }}</span>
     </a>
