@@ -75,4 +75,10 @@ export class LoginService {
       this.afAuth.signInWithPopup(new auth.default.auth.GoogleAuthProvider())
     );
   }
+
+  loginViaFacebook(): Observable<auth.default.auth.UserCredential> {
+    return from(
+      this.afAuth.signInWithPopup(new auth.default.auth.FacebookAuthProvider())
+    );
+  }
 }

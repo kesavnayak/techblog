@@ -167,10 +167,10 @@
                 style="font-size: 15px"
                 *ngIf="loading"
               ></i>
-              <i class="fab fa-google fa-fw"></i> Register with Google }}
+              <i class="fab fa-google fa-fw"></i> Register with Google
             </a>
             <a
-              href="index.html"
+              (click)="loginViaFacebook()"
               class="btn btn-facebook btn-user btn-block"
               target="_self"
             >

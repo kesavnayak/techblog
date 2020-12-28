@@ -27,4 +27,13 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['']);
     });
   }
+
+  loginViaFacebook() {
+    this.loading = true;
+    this.loginService.loginViaFacebook().subscribe((res) => {
+      this.loginService.authStore();
+      this.loading = false;
+      this.router.navigate(['']);
+    });
+  }
 }

@@ -7,6 +7,9 @@
     <div id="content">
       <app-header></app-header>
       <div class="container-fluid">
+        <a href="javascript:void(0)" (click)="goBack()">
+          <i class="fas fa-chevron-circle-left fa-2x"></i>
+        </a>
         <router-outlet></router-outlet>
         <app-scroll-top></app-scroll-top>
       </div>
