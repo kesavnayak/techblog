@@ -61,9 +61,11 @@
           >
             <div class="card-body">
               <div [innerHTML]="question.questionDesc"></div>
-              <a target="_self" rel="nofollow" href="{{ question.questionRef }}"
-                >{{ question.questionRef }} &rarr;</a
-              >
+              <p>
+                <a target="_self" rel="nofollow"
+                  >{{ question.questionRef }} &rarr;</a
+                >
+              </p>
             </div>
           </div>
         </div>
