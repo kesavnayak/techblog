@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionService } from 'src/app/service/question.service';
 import { SidenavService } from 'src/app/sidebar/sidenav.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-csharp',
@@ -11,7 +12,8 @@ export class CsharpComponent implements OnInit {
   public questions: any;
   constructor(
     public questionService: QuestionService,
-    public sideNavService: SidenavService
+    public sideNavService: SidenavService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -33,5 +35,10 @@ export class CsharpComponent implements OnInit {
       );
       console.log(this.questions);
     });
+  }
+
+  goBack() {
+    this.location.back();
+    console.log('goBack()...');
   }
 }

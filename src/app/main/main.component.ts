@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-main',
@@ -7,12 +6,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
-  constructor(private location: Location) {}
+  constructor() {}
 
   ngOnInit(): void {}
-
-  goBack() {
-    this.location.back();
-    console.log('goBack()...');
-  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestioncategoryService } from 'src/app/service/questioncategory.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-interviewquestions',
@@ -8,7 +9,10 @@ import { QuestioncategoryService } from 'src/app/service/questioncategory.servic
 })
 export class InterviewquestionsComponent implements OnInit {
   public questionCategories: any;
-  constructor(public questioncategoryService: QuestioncategoryService) {}
+  constructor(
+    public questioncategoryService: QuestioncategoryService,
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
     this.getQuestionCategories();
@@ -32,5 +36,10 @@ export class InterviewquestionsComponent implements OnInit {
       });
       console.log(this.questionCategories);
     });
+  }
+
+  goBack() {
+    this.location.back();
+    console.log('goBack()...');
   }
 }
