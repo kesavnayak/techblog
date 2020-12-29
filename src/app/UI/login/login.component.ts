@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { GoogleAuthService } from 'src/app/service/auth/google-auth.service';
 import { LoginService } from 'src/app/service/login.service';
 
 @Component({
@@ -10,11 +9,9 @@ import { LoginService } from 'src/app/service/login.service';
 })
 export class LoginComponent implements OnInit {
   public loading: boolean = false;
-  constructor(
-    public loginService: LoginService,
-    public router: Router,
-    public googleAuthService: GoogleAuthService
-  ) {}
+  public fbloading: boolean = false;
+
+  constructor(public loginService: LoginService, public router: Router) {}
 
   ngOnInit(): void {}
 
@@ -25,21 +22,19 @@ export class LoginComponent implements OnInit {
   }
 
   loginViaGoogle() {
-    //this.loading = true;
-    /*this.loginService.loginViaGoogle().subscribe((res) => {
+    this.loading = true;
+    this.loginService.loginViaGoogle().subscribe((res) => {
       this.loginService.authStore();
       this.loading = false;
       this.router.navigate(['']);
-    });*/
-
-    this.googleAuthService.signIn();
+    });
   }
 
   loginViaFacebook() {
-    this.loading = true;
+    this.fbloading = true;
     this.loginService.loginViaFacebook().subscribe((res) => {
       this.loginService.authStore();
-      this.loading = false;
+      this.fbloading = false;
       this.router.navigate(['']);
     });
   }
