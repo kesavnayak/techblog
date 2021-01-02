@@ -1,6 +1,6 @@
 <!--Back Button-->
 <a href="javascript:void(0)" (click)="goBack()">
-  <i class="fas fa-chevron-circle-left fa-2x"></i>
+  <i class="fas fa-chevron-circle-left" style="font-size: 18px"></i>
 </a>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -44,11 +44,28 @@
                 class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                 aria-labelledby="dropdownMenuLink"
               >
-                <div class="dropdown-header">Dropdown Header:</div>
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-header">
+                  Q{{ question.questionNo }} Header:
+                </div>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-comments"> Comments</i></a
+                >
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-download"> Download</i></a
+                >
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a
+                  class="dropdown-item"
+                  href="whatsapp://send?text=www.google.com"
+                  data-text="Take a look at this awesome website:"
+                  ><i class="fab fa-whatsapp"> Whatsapp</i></a
+                >
+                <a
+                  class="dropdown-item"
+                  href="fb-messenger://share?link=www.google.com"
+                  data-text="Take a look at this awesome website:"
+                  ><i class="fab fa-facebook-square"> Messenger</i></a
+                >
               </div>
             </div>
           </div>
