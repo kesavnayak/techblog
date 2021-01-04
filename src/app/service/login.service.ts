@@ -70,44 +70,15 @@ export class LoginService {
     });
   }
 
-  loginViaGoogle(): void {
-    this.loading = true;
-    var provider = new auth.default.auth.GoogleAuthProvider();
-    this.afAuth.signInWithRedirect(provider);
-
-    this.afAuth
-      .getRedirectResult()
-      .then((gsignres) => {
-        if (gsignres.user != null) {
-          this.authStore();
-          this.loading = false;
-          this.router.navigate(['']);
-        } else {
-          this.loading = false;
-        }
-      })
-      .catch((err) => {
-        this.loading = false;
-      });
+  loginViaGoogle(): Observable<auth.default.auth.UserCredential> {
+    return from(
+      this.afAuth.signInWithPopup(new auth.default.auth.GoogleAuthProvider())
+    );
   }
 
-  loginViaFacebook(): void {
-    this.loading = true;
-    var provider = new auth.default.auth.FacebookAuthProvider();
-    this.afAuth.signInWithRedirect(provider);
-    this.afAuth
-      .getRedirectResult()
-      .then((gsignres) => {
-        if (gsignres.user != null) {
-          this.authStore();
-          this.loading = false;
-          this.router.navigate(['']);
-        } else {
-          this.loading = false;
-        }
-      })
-      .catch((err) => {
-        this.loading = false;
-      });
+  loginViaFacebook(): Observable<auth.default.auth.UserCredential> {
+    return from(
+      this.afAuth.signInWithPopup(new auth.default.auth.FacebookAuthProvider())
+    );
   }
 }

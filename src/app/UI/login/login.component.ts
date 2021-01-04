@@ -22,10 +22,20 @@ export class LoginComponent implements OnInit {
   }
 
   loginViaGoogle() {
-    this.loginService.loginViaGoogle();
+    this.loading = true;
+    this.loginService.loginViaGoogle().subscribe((res) => {
+      this.loginService.authStore();
+      this.loading = false;
+      this.router.navigate(['']);
+    });
   }
 
   loginViaFacebook() {
-    this.loginService.loginViaFacebook();
+    this.fbloading = true;
+    this.loginService.loginViaFacebook().subscribe((res) => {
+      this.loginService.authStore();
+      this.fbloading = false;
+      this.router.navigate(['']);
+    });
   }
 }
