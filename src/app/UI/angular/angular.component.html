@@ -54,18 +54,30 @@
                   ><i class="fas fa-download"> Download</i></a
                 >
                 <div class="dropdown-divider"></div>
-                <a
-                  class="dropdown-item"
-                  href="whatsapp://send?text=www.google.com"
-                  data-text="Take a look at this awesome website:"
-                  ><i class="fab fa-whatsapp"> Whatsapp</i></a
-                >
-                <a
-                  class="dropdown-item"
-                  href="fb-messenger://share?link=www.google.com"
-                  data-text="Take a look at this awesome website:"
-                  ><i class="fab fa-facebook-square"> Messenger</i></a
-                >
+                <div style="margin: 12px">
+                  <share-buttons
+                    [theme]="'circles-dark'"
+                    [include]="[
+                      'whatsapp',
+                      'copy',
+                      'facebook',
+                      'twitter',
+                      'messenger',
+                      'sms',
+                      'email',
+                      'linkedin'
+                    ]"
+                    [show]="9"
+                    [size]="0"
+                    [url]="
+                      'https://www.eduforbetterment.com/generate-qr-code-in-angular/'
+                    "
+                    [image]="
+                      'https://www.eduforbetterment.com/wp-content/uploads/2020/08/qrcode.jpg'
+                    "
+                    [autoSetMeta]="false"
+                  ></share-buttons>
+                </div>
               </div>
             </div>
           </div>

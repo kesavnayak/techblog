@@ -8,6 +8,8 @@
 
 @import "/node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 
+@import "/node_modules/ngx-sharebuttons/themes/circles/circles-dark-theme";
+
 pre {
   font-size: 10px;
   border: 2px solid grey;
@@ -22,4 +24,8 @@ pre {
 
 table {
   font-size: 8px;
+}
+
+.sb-content {
+  font-size: 10px !important;
 }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,9 @@ import { MustMatchDirective } from './directive/must-match.directive';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { CoreComponent } from './UI/core/core.component';
 
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +56,7 @@ import { CoreComponent } from './UI/core/core.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
@@ -59,6 +64,10 @@ import { CoreComponent } from './UI/core/core.component';
     ReactiveFormsModule,
     AngularFireModule,
     AngularFireAuthModule,
+    ShareButtonsModule.withConfig({
+      debug: true,
+    }),
+    ShareIconsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
