@@ -57,6 +57,7 @@
                 <div style="margin: 12px">
                   <share-buttons
                     [theme]="'circles-dark'"
+                    (click)="this.target = '_self'"
                     [include]="[
                       'whatsapp',
                       'facebook',
@@ -67,7 +68,7 @@
                       'linkedin',
                       'copy'
                     ]"
-                    [show]="9"
+                    [show]="3"
                     [size]="0"
                     [url]="
                       'https://www.eduforbetterment.com/generate-qr-code-in-angular/'
