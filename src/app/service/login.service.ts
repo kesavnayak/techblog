@@ -70,16 +70,44 @@ export class LoginService {
     });
   }
 
-  loginViaGoogle(): Observable<auth.default.auth.UserCredential> {
-    debugger;
+  loginViaGoogle(): void {
+    this.loading = true;
     var provider = new auth.default.auth.GoogleAuthProvider();
     this.afAuth.signInWithRedirect(provider);
-    return from(this.afAuth.getRedirectResult());
+
+    this.afAuth
+      .getRedirectResult()
+      .then((gsignres) => {
+        if (gsignres.user != null) {
+          this.authStore();
+          this.loading = false;
+          this.router.navigate(['']);
+        } else {
+          this.loading = false;
+        }
+      })
+      .catch((err) => {
+        this.loading = false;
+      });
   }
 
-  loginViaFacebook(): Observable<auth.default.auth.UserCredential> {
+  loginViaFacebook(): void {
+    this.loading = true;
     var provider = new auth.default.auth.FacebookAuthProvider();
     this.afAuth.signInWithRedirect(provider);
-    return from(this.afAuth.getRedirectResult());
+    this.afAuth
+      .getRedirectResult()
+      .then((gsignres) => {
+        if (gsignres.user != null) {
+          this.authStore();
+          this.loading = false;
+          this.router.navigate(['']);
+        } else {
+          this.loading = false;
+        }
+      })
+      .catch((err) => {
+        this.loading = false;
+      });
   }
 }
