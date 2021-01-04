@@ -22,20 +22,10 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {}
 
   loginViaGoogle() {
-    this.loading = true;
-    this.loginService.loginViaGoogle().subscribe((res) => {
-      this.loginService.authStore();
-      this.loading = false;
-      this.router.navigate(['']);
-    });
+    this.loginService.loginViaGoogle();
   }
 
   loginViaFacebook() {
-    this.loading = true;
-    this.loginService.loginViaFacebook().subscribe((res) => {
-      this.loginService.authStore();
-      this.loading = false;
-      this.router.navigate(['']);
-    });
+    this.loginService.loginViaFacebook();
   }
 }
