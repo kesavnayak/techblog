@@ -71,14 +71,15 @@ export class LoginService {
   }
 
   loginViaGoogle(): Observable<auth.default.auth.UserCredential> {
-    return from(
-      this.afAuth.signInWithPopup(new auth.default.auth.GoogleAuthProvider())
-    );
+    debugger;
+    var provider = new auth.default.auth.GoogleAuthProvider();
+    this.afAuth.signInWithRedirect(provider);
+    return from(this.afAuth.getRedirectResult());
   }
 
   loginViaFacebook(): Observable<auth.default.auth.UserCredential> {
-    return from(
-      this.afAuth.signInWithPopup(new auth.default.auth.FacebookAuthProvider())
-    );
+    var provider = new auth.default.auth.FacebookAuthProvider();
+    this.afAuth.signInWithRedirect(provider);
+    return from(this.afAuth.getRedirectResult());
   }
 }
