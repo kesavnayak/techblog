@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { QuestionService } from 'src/app/service/question.service';
 import { SidenavService } from 'src/app/sidebar/sidenav.service';
 import { Location } from '@angular/common';
+import jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-angular',
@@ -42,5 +43,29 @@ export class AngularComponent implements OnInit {
   goBack() {
     this.location.back();
     console.log('goBack()...');
+  }
+
+  @ViewChild('content') content: ElementRef;
+  makePdf(question) {
+    let doc = new jsPDF();
+
+    var data =
+      '<strong>Q' +
+      question.questionNo +
+      '.' +
+      question.questionText +
+      '</strong><br/>' +
+      question.questionDesc +
+      '</div>';
+
+    doc.fromHTML(data, function () {
+      debugger;
+      doc.save(
+        'Q' + question.questionNo + '.' + question.questionText + '.pdf'
+      );
+    });
+
+    //doc.html(question.questionDesc);
+    doc.save('Q' + question.questionNo + '.' + question.questionText + '.pdf');
   }
 }
