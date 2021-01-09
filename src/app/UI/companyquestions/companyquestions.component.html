@@ -41,6 +41,11 @@
   [autoSetMeta]="false"
 ></share-buttons>
 
+<a class="dropdown-item" routerLink="/login" *ngIf="!loginService.isLoggedIn">
+  <i class="fas fa-sign-in-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+  Login
+</a>
+
 <div class="row">
   <div class="row">
     <div class="col-xl-8 col-lg-7">
