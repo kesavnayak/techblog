@@ -71,7 +71,12 @@
                     [show]="3"
                     [size]="0"
                     [url]="
-                      'https://www.eduforbetterment.com/generate-qr-code-in-angular/'
+                      'Q' +
+                      question.questionNo +
+                      '.' +
+                      question.questionText +
+                      ' Answer ' +
+                      question.questionDesc
                     "
                     [image]="''"
                     [autoSetMeta]="false"
