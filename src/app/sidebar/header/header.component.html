@@ -83,7 +83,7 @@
         <a
           class="dropdown-toggle"
           role="button"
-          id="dropdownMenuLink"
+          id="loginDropdownMenuLink"
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
@@ -92,39 +92,36 @@
         </a>
         <div
           class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-          aria-labelledby="dropdownMenuLink"
+          aria-labelledby="loginDropdownMenuLink"
         >
-          <div
-            class="dropdown-header"
-            style="text-transform: lowercase !important"
-            *ngIf="loginService.isLoggedIn"
-          >
-            {{ loginService.username }}
-          </div>
-          <a
-            class="dropdown-item"
-            routerLink="/login"
-            *ngIf="!loginService.isLoggedIn"
-          >
-            <i class="fas fa-sign-in-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-            Login
-          </a>
-
-          <a class="dropdown-item" href="#" *ngIf="loginService.isLoggedIn">
-            <i
-              class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"
+          <form class="form-inline mr-auto w-100 navbar-login">
+            <div class="dropdown-header" *ngIf="loginService.isLoggedIn">
+              {{ loginService.username }}
+            </div>
+            <a
+              class="dropdown-item"
+              routerLink="/login"
+              *ngIf="!loginService.isLoggedIn"
+            >
+              <i class="fas fa-sign-in-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+              Login
+            </a>
+            <a class="dropdown-item" href="#" *ngIf="loginService.isLoggedIn">
+              <i
+                class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"
+                *ngIf="loginService.isLoggedIn"
+              ></i>
+              Profile
+            </a>
+            <div class="dropdown-divider" *ngIf="loginService.isLoggedIn"></div>
+            <a
+              class="dropdown-item"
+              (click)="logout()"
               *ngIf="loginService.isLoggedIn"
-            ></i>
-            Profile
-          </a>
-          <div class="dropdown-divider" *ngIf="loginService.isLoggedIn"></div>
-          <a
-            class="dropdown-item"
-            (click)="logout()"
-            *ngIf="loginService.isLoggedIn"
-            ><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i
-            >Logout</a
-          >
+              ><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i
+              >Logout</a
+            >
+          </form>
         </div>
       </div>
     </li>
