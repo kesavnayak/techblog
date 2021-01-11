@@ -10,6 +10,8 @@ import { InterviewquestionsComponent } from './UI/interviewquestions/interviewqu
 import { LoginComponent } from './UI/login/login.component';
 import { OopsComponent } from './UI/oops/oops.component';
 import { SignupComponent } from './UI/signup/signup.component';
+import { UixComponent } from './UI/uix/uix.component';
+import { XamarinComponent } from './UI/xamarin/xamarin.component';
 
 const routes: Routes = [
   {
@@ -24,6 +26,8 @@ const routes: Routes = [
       { path: 'interview/core', component: CoreComponent },
       { path: 'interview', component: InterviewquestionsComponent },
       { path: 'company', component: CompanyquestionsComponent },
+      { path: 'uix', component: UixComponent },
+      { path: 'uix/xamarin', component: XamarinComponent },
     ],
   },
   { path: 'login', component: LoginComponent },

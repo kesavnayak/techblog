@@ -6,4 +6,5 @@ export class QuestionCategory {
   public questionCategoryLogoText: string;
   public questionCategoryName: string;
   public questionCategoryLink: string;
+  public categoryId: string;
 }

@@ -33,6 +33,15 @@ import { CoreComponent } from './UI/core/core.component';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 
+import {
+  IgxButtonModule,
+  IgxIconModule,
+  IgxCardModule,
+  IgxRippleModule,
+} from 'igniteui-angular';
+import { UixComponent } from './UI/uix/uix.component';
+import { XamarinComponent } from './UI/xamarin/xamarin.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +61,8 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
     AngularComponent,
     MustMatchDirective,
     CoreComponent,
+    UixComponent,
+    XamarinComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +79,10 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
       debug: true,
     }),
     ShareIconsModule,
+    IgxButtonModule,
+    IgxIconModule,
+    IgxCardModule,
+    IgxRippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -3,11 +3,11 @@ import { QuestioncategoryService } from 'src/app/service/questioncategory.servic
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-interviewquestions',
-  templateUrl: './interviewquestions.component.html',
-  styleUrls: ['./interviewquestions.component.scss'],
+  selector: 'app-uix',
+  templateUrl: './uix.component.html',
+  styleUrls: ['./uix.component.scss'],
 })
-export class InterviewquestionsComponent implements OnInit {
+export class UixComponent implements OnInit {
   public questionCategories: any;
   constructor(
     public questioncategoryService: QuestioncategoryService,
@@ -37,7 +37,7 @@ export class InterviewquestionsComponent implements OnInit {
       });
 
       this.questionCategories = this.questionCategories
-        .filter((item) => item.categoryId === 'pLDuKxw3JFx1Oify3Db3')
+        .filter((item) => item.categoryId === 'kTn7aaGxOilU7QsWq93z')
         .sort((item1, item2) => (item1.questionNo > item2.questionNo ? 1 : -1));
     });
   }
