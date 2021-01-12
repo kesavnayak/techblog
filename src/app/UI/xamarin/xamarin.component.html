@@ -1,8 +1,13 @@
+<!--Back Button-->
+<a href="javascript:void(0)" (click)="goBack()">
+  <i class="fas fa-chevron-circle-left" style="font-size: 18px"></i>
+</a>
+
 <div class="row" *ngFor="let card of cards">
   <div class="row">
     <div class="sample-column card-wrapper">
       <igx-card>
-        <igx-card-media height="auto" style="margin: 10px">
+        <igx-card-media height="auto">
           <img [src]="card.imageUrl" />
         </igx-card-media>
 
@@ -16,8 +21,8 @@
         </igx-card-content>
 
         <igx-card-actions>
-          <button igxButton igxRipple *ngFor="let button of card.buttons">
-            {{ button }}
+          <button igxButton igxRipple (click)="saveit(card.more)">
+            read more
           </button>
           <button
             igxButton="icon"

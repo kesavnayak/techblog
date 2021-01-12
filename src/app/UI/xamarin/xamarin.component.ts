@@ -26,14 +26,13 @@ export class XamarinComponent implements OnInit {
       this.cards = res.map((e) => {
         return {
           cardId: e.payload.doc.id,
-          buttons: e.payload.doc.data()['buttons'],
           content: e.payload.doc.data()['content'],
-          icons: e.payload.doc.data()['icons'],
           imageUrl: e.payload.doc.data()['imageUrl'],
           subtitle: e.payload.doc.data()['subtitle'],
           title: e.payload.doc.data()['title'],
           questionCategoryId: e.payload.doc.data()['QuestionCategoryId'],
           cardno: e.payload.doc.data()['cardno'],
+          more: e.payload.doc.data()['more'],
         };
       });
 
@@ -46,5 +45,8 @@ export class XamarinComponent implements OnInit {
   goBack() {
     this.location.back();
     console.log('goBack()...');
+  }
+  saveit(url) {
+    window.open(url, '_self');
   }
 }
