@@ -1,53 +1,18 @@
-<div class="row">
+<div class="row" *ngFor="let card of cards">
   <div class="row">
     <div class="sample-column card-wrapper">
       <igx-card>
-        <igx-card-media height="250px">
+        <igx-card-media height="auto" style="margin: 10px">
           <img [src]="card.imageUrl" />
         </igx-card-media>
 
         <igx-card-header>
           <h3 igxCardHeaderTitle>{{ card.title }}</h3>
-          <h5 igxCardHeaderSubtitle>{{ card.subtitle }}</h5>
+          <h5 igxCardHeaderSubtitle [innerHTML]="card.subtitle"></h5>
         </igx-card-header>
 
         <igx-card-content>
-          <p>{{ card.content }}</p>
-        </igx-card-content>
-
-        <igx-card-actions>
-          <button igxButton igxRipple *ngFor="let button of card.buttons">
-            {{ button }}
-          </button>
-          <button
-            igxButton="icon"
-            igxRipple
-            igxRippleCentered="true"
-            *ngFor="let icon of card.icons"
-          >
-            <igx-icon>{{ icon }}</igx-icon>
-          </button>
-        </igx-card-actions>
-      </igx-card>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="row">
-    <div class="sample-column card-wrapper">
-      <igx-card>
-        <igx-card-media height="200px">
-          <img [src]="card.imageUrl" />
-        </igx-card-media>
-
-        <igx-card-header>
-          <h3 igxCardHeaderTitle>{{ card.title }}</h3>
-          <h5 igxCardHeaderSubtitle>{{ card.subtitle }}</h5>
-        </igx-card-header>
-
-        <igx-card-content>
-          <p>{{ card.content }}</p>
+          <p [innerHTML]="card.content"></p>
         </igx-card-content>
 
         <igx-card-actions>

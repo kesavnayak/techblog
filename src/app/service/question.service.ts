@@ -7,10 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class QuestionService {
   questions: Observable<any[]>;
+  cards: Observable<any[]>;
 
   constructor(private firestore: AngularFirestore) {}
 
   getQuestionCategories() {
     return this.firestore.collection('questions').snapshotChanges();
+  }
+
+  getCards() {
+    return this.firestore.collection('cards').snapshotChanges();
   }
 }
