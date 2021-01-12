@@ -41,6 +41,7 @@ import {
 } from 'igniteui-angular';
 import { UixComponent } from './UI/uix/uix.component';
 import { XamarinComponent } from './UI/xamarin/xamarin.component';
+import { WebapiComponent } from './UI/webapi/webapi.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { XamarinComponent } from './UI/xamarin/xamarin.component';
     CoreComponent,
     UixComponent,
     XamarinComponent,
+    WebapiComponent,
   ],
   imports: [
     BrowserModule,

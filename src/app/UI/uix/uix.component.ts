@@ -25,9 +25,6 @@ export class UixComponent implements OnInit {
           questionCategoryId: e.payload.doc.id,
           questionCategoryName: e.payload.doc.data()['QuestionCategoryName'],
           questionCategoryIcon: e.payload.doc.data()['QuestionCategoryIcon'],
-          questionCategoryLogoText: e.payload.doc.data()[
-            'QuestionCategoryLogoText'
-          ],
           questionCategoryLogo: e.payload.doc.data()['QuestionCategoryLogo'],
           questionCategoryDesc: e.payload.doc.data()['QuestionCategoryDesc'],
           questionCategoryColor: e.payload.doc.data()['QuestionCategoryColor'],
