@@ -11696,3 +11696,36 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+
+/* pre Tag Color */
+
+.pl-k {
+  color: red;
+}
+
+.pl-c1,
+.pl-s .pl-v {
+  color: blue;
+}
+
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+  color: #095cc5;
+}
+
+.pl-smw,
+.pl-v {
+  color: #e46e3b;
+}
+
+.pl-e,
+.pl-en {
+  color: #9169cf;
+}
+
+/* pre tag End */
