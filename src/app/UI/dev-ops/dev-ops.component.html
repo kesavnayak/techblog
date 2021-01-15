@@ -85,7 +85,15 @@
             aria-labelledby="headingOne"
             data-parent="#accordionExample"
           >
-            <div class="card-body" [innerHTML]="question.questionDesc"></div>
+            <div class="card-body">
+              <div [innerHTML]="question.questionDesc"></div>
+              <div class="mt-4 text-left small" *ngIf="question.questionRef">
+                <span class="mr-2">
+                  <i class="fab fa-sourcetree text-primary"></i>
+                  {{ question.questionRef }}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

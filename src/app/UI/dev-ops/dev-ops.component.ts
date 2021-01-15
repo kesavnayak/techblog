@@ -31,6 +31,7 @@ export class DevOpsComponent implements OnInit {
           questionCategoryId: e.payload.doc.data()['QuestionCategoryId'],
           questionNo: e.payload.doc.data()['QuestionNo'],
           iscollapse: e.payload.doc.data()['IsCollapse'],
+          questionRef: e.payload.doc.data()['QuestionRef'],
         };
       });
       this.questions = this.questions.sort((item1, item2) =>
