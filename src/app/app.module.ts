@@ -42,6 +42,7 @@ import {
 import { UixComponent } from './UI/uix/uix.component';
 import { XamarinComponent } from './UI/xamarin/xamarin.component';
 import { WebapiComponent } from './UI/webapi/webapi.component';
+import { DevOpsComponent } from './UI/dev-ops/dev-ops.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { WebapiComponent } from './UI/webapi/webapi.component';
     UixComponent,
     XamarinComponent,
     WebapiComponent,
+    DevOpsComponent,
   ],
   imports: [
     BrowserModule,

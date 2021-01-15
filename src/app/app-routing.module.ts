@@ -6,6 +6,7 @@ import { CompanyquestionsComponent } from './UI/companyquestions/companyquestion
 import { CoreComponent } from './UI/core/core.component';
 import { CsharpComponent } from './UI/csharp/csharp.component';
 import { DashboardComponent } from './UI/dashboard/dashboard.component';
+import { DevOpsComponent } from './UI/dev-ops/dev-ops.component';
 import { InterviewquestionsComponent } from './UI/interviewquestions/interviewquestions.component';
 import { LoginComponent } from './UI/login/login.component';
 import { OopsComponent } from './UI/oops/oops.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
       { path: 'interview/angular', component: AngularComponent },
       { path: 'interview/core', component: CoreComponent },
       { path: 'interview/webapi', component: WebapiComponent },
+      { path: 'interview/DevOps', component: DevOpsComponent },
       { path: 'interview', component: InterviewquestionsComponent },
       { path: 'company', component: CompanyquestionsComponent },
       { path: 'uix', component: UixComponent },

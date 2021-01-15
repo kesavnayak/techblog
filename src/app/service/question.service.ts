@@ -18,4 +18,8 @@ export class QuestionService {
   getCards() {
     return this.firestore.collection('cards').snapshotChanges();
   }
+
+  getDevOps() {
+    return this.firestore.collection('DevOps').snapshotChanges();
+  }
 }

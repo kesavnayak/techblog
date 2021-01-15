@@ -1,0 +1,94 @@
+<!--Back Button-->
+<a href="javascript:void(0)" (click)="goBack()">
+  <i class="fas fa-chevron-circle-left" style="font-size: 18px"></i>
+</a>
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">DevOps Interview Question & Answer</h1>
+</div>
+
+<div class="row">
+  <div class="row">
+    <div class="col-xl-8 col-lg-7 accordion" id="accordionExample">
+      <div class="card shadow mb-4" #content *ngFor="let question of questions">
+        <div class="card">
+          <div
+            class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+            id="headingOne"
+          >
+            <h6 class="m-0 font-weight-bold text-primary">
+              <a
+                type="button"
+                class="btn-link"
+                data-toggle="collapse"
+                [attr.data-target]="'#collapseOne' + question.questionNo"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+                style="text-decoration: none"
+              >
+                Q{{ question.questionNo }}. {{ question.questionText }}
+              </a>
+            </h6>
+            <div class="dropdown no-arrow">
+              <a
+                class="dropdown-toggle"
+                role="button"
+                id="dropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                aria-labelledby="dropdownMenuLink"
+              >
+                <div class="dropdown-header">
+                  Q{{ question.questionNo }} Header:
+                </div>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-comments"> Comments</i></a
+                >
+                <a class="dropdown-item" (click)="makePdf(question)"
+                  ><i class="fas fa-download"> Download</i></a
+                >
+                <div class="dropdown-divider"></div>
+                <div style="margin: 12px">
+                  <share-buttons
+                    [theme]="'circles-dark'"
+                    (click)="this.target = '_self'"
+                    [include]="[
+                      'whatsapp',
+                      'facebook',
+                      'twitter',
+                      'messenger',
+                      'sms',
+                      'email',
+                      'linkedin',
+                      'copy'
+                    ]"
+                    [show]="3"
+                    [size]="0"
+                    [url]="'http://www.techbloginterview.com'"
+                    [image]="''"
+                    [autoSetMeta]="false"
+                  ></share-buttons>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="collapseOne{{ question.questionNo }}"
+            class="collapse {{ question.iscollapse }}"
+            aria-labelledby="headingOne"
+            data-parent="#accordionExample"
+          >
+            <div class="card-body" [innerHTML]="question.questionDesc"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
