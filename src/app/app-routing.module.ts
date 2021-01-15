@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { AngularComponent } from './UI/angular/angular.component';
+import { AzureComponent } from './UI/azure/azure.component';
 import { CompanyquestionsComponent } from './UI/companyquestions/companyquestions.component';
 import { CoreComponent } from './UI/core/core.component';
 import { CsharpComponent } from './UI/csharp/csharp.component';
 import { DashboardComponent } from './UI/dashboard/dashboard.component';
 import { DevOpsComponent } from './UI/dev-ops/dev-ops.component';
+import { EfComponent } from './UI/ef/ef.component';
 import { InterviewquestionsComponent } from './UI/interviewquestions/interviewquestions.component';
 import { LoginComponent } from './UI/login/login.component';
 import { OopsComponent } from './UI/oops/oops.component';
@@ -28,6 +30,8 @@ const routes: Routes = [
       { path: 'interview/core', component: CoreComponent },
       { path: 'interview/webapi', component: WebapiComponent },
       { path: 'interview/DevOps', component: DevOpsComponent },
+      { path: 'interview/Azure', component: AzureComponent },
+      { path: 'interview/Ef', component: EfComponent },
       { path: 'interview', component: InterviewquestionsComponent },
       { path: 'company', component: CompanyquestionsComponent },
       { path: 'uix', component: UixComponent },

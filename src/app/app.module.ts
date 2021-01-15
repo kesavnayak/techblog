@@ -43,6 +43,8 @@ import { UixComponent } from './UI/uix/uix.component';
 import { XamarinComponent } from './UI/xamarin/xamarin.component';
 import { WebapiComponent } from './UI/webapi/webapi.component';
 import { DevOpsComponent } from './UI/dev-ops/dev-ops.component';
+import { AzureComponent } from './UI/azure/azure.component';
+import { EfComponent } from './UI/ef/ef.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { DevOpsComponent } from './UI/dev-ops/dev-ops.component';
     XamarinComponent,
     WebapiComponent,
     DevOpsComponent,
+    AzureComponent,
+    EfComponent,
   ],
   imports: [
     BrowserModule,
