@@ -60,4 +60,12 @@ export class SidenavService {
   toggleHideQuestion(): void {
     this.hideQuestion = false;
   }
+
+  generateFake(count: number): Array<number> {
+    const indexes = [];
+    for (let i = 0; i < count; i++) {
+      indexes.push(i);
+    }
+    return indexes;
+  }
 }

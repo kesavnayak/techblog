@@ -29,12 +29,13 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "angular-font-awesome": "^3.1.2",
     "firebase": "^8.2.1",
+    "igniteui-angular": "^11.0.9",
+    "jspdf": "^1.4.1",
     "ngx-sharebuttons": "^8.0.5",
+    "ngx-skeleton-loader": "^2.6.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2",
-    "jspdf": "^1.4.1",
-    "igniteui-angular": "^11.0.9"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1100.3",

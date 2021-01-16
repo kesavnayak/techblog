@@ -10,7 +10,7 @@ import jsPDF from 'jspdf';
   styleUrls: ['./angular.component.scss'],
 })
 export class AngularComponent implements OnInit {
-  public questions: any;
+  public questions: any = [];
   constructor(
     public questionService: QuestionService,
     public sideNavService: SidenavService,

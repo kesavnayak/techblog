@@ -33,6 +33,8 @@ import { CoreComponent } from './UI/core/core.component';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+
 import {
   IgxButtonModule,
   IgxIconModule,
@@ -93,6 +95,7 @@ import { DockerComponent } from './UI/docker/docker.component';
     IgxIconModule,
     IgxCardModule,
     IgxRippleModule,
+    NgxSkeletonLoaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
