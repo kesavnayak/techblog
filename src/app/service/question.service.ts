@@ -22,4 +22,8 @@ export class QuestionService {
   getDevOps() {
     return this.firestore.collection('DevOps').snapshotChanges();
   }
+
+  getDocker() {
+    return this.firestore.collection('Docker').snapshotChanges();
+  }
 }

@@ -8,6 +8,7 @@ import { CoreComponent } from './UI/core/core.component';
 import { CsharpComponent } from './UI/csharp/csharp.component';
 import { DashboardComponent } from './UI/dashboard/dashboard.component';
 import { DevOpsComponent } from './UI/dev-ops/dev-ops.component';
+import { DockerComponent } from './UI/docker/docker.component';
 import { EfComponent } from './UI/ef/ef.component';
 import { InterviewquestionsComponent } from './UI/interviewquestions/interviewquestions.component';
 import { LoginComponent } from './UI/login/login.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
       { path: 'interview/DevOps', component: DevOpsComponent },
       { path: 'interview/Azure', component: AzureComponent },
       { path: 'interview/Ef', component: EfComponent },
+      { path: 'interview/Docker', component: DockerComponent },
       { path: 'interview', component: InterviewquestionsComponent },
       { path: 'company', component: CompanyquestionsComponent },
       { path: 'uix', component: UixComponent },
