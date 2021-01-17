@@ -10,7 +10,7 @@ import jsPDF from 'jspdf';
   styleUrls: ['./webapi.component.scss'],
 })
 export class WebapiComponent implements OnInit {
-  public questions: any;
+  public questions: any = [];
   constructor(
     public questionService: QuestionService,
     public sideNavService: SidenavService,
@@ -18,6 +18,7 @@ export class WebapiComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.getQuestions();
   }
 
