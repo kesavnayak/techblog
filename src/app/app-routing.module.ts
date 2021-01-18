@@ -43,7 +43,7 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'phonenumber', component: PhoneloginComponent },
+  { path: 'phone', component: PhoneloginComponent },
   {
     path: '**',
     redirectTo: '/login',

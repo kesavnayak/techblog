@@ -52,7 +52,7 @@ export class PhoneloginComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    firebase.initializeApp(environment.firebaseConfig);
+    //firebase.initializeApp(environment.firebaseConfig);
     this.windowRef = this.loginService.windowRef;
   }
 
