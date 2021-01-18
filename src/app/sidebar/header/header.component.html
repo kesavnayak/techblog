@@ -106,7 +106,9 @@
             </div>
           </div>
           <div>
-            <div class="small text-gray-500">{{ recent.recentsDate }}</div>
+            <div class="small text-gray-500">
+              {{ recent.recentsDate?.toDate() | date: "longDate" }}
+            </div>
             <span class="font-weight-bold">{{ recent.recentsText }}</span>
           </div>
         </a>
