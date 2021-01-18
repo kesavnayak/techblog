@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +13,7 @@ export class SidenavService {
   hidePage: boolean = false;
   hideQuestion: boolean = false;
 
-  constructor() {}
+  constructor(private firestore: AngularFirestore) {}
 
   toggleSideNav(): void {
     this.hideSideNav = !this.hideSideNav;
@@ -67,5 +69,9 @@ export class SidenavService {
       indexes.push(i);
     }
     return indexes;
+  }
+
+  getRecent() {
+    return this.firestore.collection('Recent').snapshotChanges();
   }
 }
