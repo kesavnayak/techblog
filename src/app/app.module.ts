@@ -48,6 +48,7 @@ import { DevOpsComponent } from './UI/dev-ops/dev-ops.component';
 import { AzureComponent } from './UI/azure/azure.component';
 import { EfComponent } from './UI/ef/ef.component';
 import { DockerComponent } from './UI/docker/docker.component';
+import { PhoneloginComponent } from './UI/phonelogin/phonelogin.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { DockerComponent } from './UI/docker/docker.component';
     AzureComponent,
     EfComponent,
     DockerComponent,
+    PhoneloginComponent,
   ],
   imports: [
     BrowserModule,

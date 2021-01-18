@@ -24,6 +24,15 @@ export class LoginService {
     return user !== null ? user.email : '';
   }
 
+  get phoneNumber(): string {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return user !== null ? user.phoneNumber : '';
+  }
+
+  get windowRef() {
+    return window;
+  }
+
   authStore() {
     this.afAuth.authState.subscribe((user) => {
       if (user) {

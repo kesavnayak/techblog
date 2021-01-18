@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
+import { PhoneloginComponent } from './UI/phonelogin/phonelogin.component';
 import { AngularComponent } from './UI/angular/angular.component';
 import { AzureComponent } from './UI/azure/azure.component';
 import { CompanyquestionsComponent } from './UI/companyquestions/companyquestions.component';
@@ -42,6 +43,7 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'phonenumber', component: PhoneloginComponent },
   {
     path: '**',
     redirectTo: '/login',

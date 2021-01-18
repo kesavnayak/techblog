@@ -97,7 +97,11 @@
         >
           <form class="form-inline mr-auto w-100 navbar-login">
             <div class="dropdown-header" *ngIf="loginService.isLoggedIn">
-              {{ loginService.username }}
+              {{
+                loginService.username == null
+                  ? loginService.phoneNumber
+                  : loginService.username
+              }}
             </div>
             <a
               class="dropdown-item"

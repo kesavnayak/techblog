@@ -1,0 +1,73 @@
+<div class="container">
+  <!-- Outer Row -->
+  <div class="row justify-content-center">
+    <div class="col-xl-10 col-lg-12 col-md-9">
+      <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+          <div class="text-right" routerLink="login" style="padding: 10px">
+            <i class="far fa-times-circle fa-2x"></i>
+          </div>
+
+          <!-- Nested Row within Card Body -->
+          <div class="row">
+            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+            <div class="col-lg-6">
+              <div class="p-4">
+                <div class="text-center">
+                  <h1 class="h4 text-gray-900 mb-4">Phone Login!</h1>
+                </div>
+                <form>
+                  <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input
+                      name="phoneNumber"
+                      type="tel"
+                      class="form-control"
+                      name="phoneNumber"
+                      placeholder="Phone Number"
+                      [(ngModel)]="phoneNumber"
+                    />
+                  </div>
+                  <div id="recaptcha-container"></div>
+                  <button
+                    class="btn btn-primary btn-block"
+                    [disabled]="disableOTPSendButton"
+                    (click)="signIn(phoneNumber)"
+                  >
+                    Send OTP
+                  </button>
+                  <hr />
+
+                  <div class="form-group">
+                    <label for="otp">Verification Code</label>
+                    <input
+                      name="otp"
+                      type="tel"
+                      class="form-control"
+                      name="otp"
+                      placeholder="OTP"
+                      [(ngModel)]="otp"
+                    />
+                  </div>
+                  <button
+                    class="btn btn-primary btn-block"
+                    (click)="verifyOTP()"
+                    [disabled]="disableOTPVerifyButton"
+                  >
+                    Verify
+                  </button>
+                  <button
+                    class="btn btn-secondary btn-block"
+                    routerLink="/login"
+                  >
+                    Cancel
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
