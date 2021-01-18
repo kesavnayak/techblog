@@ -50,6 +50,8 @@ import { EfComponent } from './UI/ef/ef.component';
 import { DockerComponent } from './UI/docker/docker.component';
 import { PhoneloginComponent } from './UI/phonelogin/phonelogin.component';
 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,6 +100,7 @@ import { PhoneloginComponent } from './UI/phonelogin/phonelogin.component';
     IgxCardModule,
     IgxRippleModule,
     NgxSkeletonLoaderModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

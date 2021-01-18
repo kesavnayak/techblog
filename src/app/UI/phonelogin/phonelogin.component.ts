@@ -4,6 +4,7 @@ import { LoginService } from '../../service/login.service';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import { environment } from 'src/environments/environment';
+import { SnackbarService } from 'src/app/plugin/snackbar.service';
 
 @Component({
   selector: 'app-phonelogin',
@@ -17,7 +18,11 @@ export class PhoneloginComponent implements OnInit, AfterViewInit {
   disableOTPSendButton = true;
   disableOTPVerifyButton = true;
 
-  constructor(public loginService: LoginService, public router: Router) {}
+  constructor(
+    public loginService: LoginService,
+    public router: Router,
+    public snackbar: SnackbarService
+  ) {}
   ngAfterViewInit(): void {
     this.windowRef.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
       'recaptcha-container',
@@ -47,12 +52,11 @@ export class PhoneloginComponent implements OnInit, AfterViewInit {
         this.disableOTPVerifyButton = false;
       })
       .catch((error) => {
-        alert(error.code);
+        this.snackbar.open(error.message);
       });
   }
 
   ngOnInit(): void {
-    //firebase.initializeApp(environment.firebaseConfig);
     this.windowRef = this.loginService.windowRef;
   }
 
@@ -60,13 +64,12 @@ export class PhoneloginComponent implements OnInit, AfterViewInit {
     this.windowRef.confirmationResult
       .confirm(this.otp)
       .then((result) => {
-        // User signed in successfully.
         const user = result.user;
         this.loginService.authStore();
         this.router.navigate(['']);
       })
       .catch((error) => {
-        alert('Incorrect code entered?');
+        this.snackbar.open('Incorrect code entered?');
       });
   }
 
