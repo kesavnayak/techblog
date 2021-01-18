@@ -1,4 +1,9 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  OnInit,
+  ViewEncapsulation,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../../service/login.service';
 import firebase from 'firebase/app';
@@ -10,6 +15,7 @@ import { SnackbarService } from 'src/app/plugin/snackbar.service';
   selector: 'app-phonelogin',
   templateUrl: './phonelogin.component.html',
   styleUrls: ['./phonelogin.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class PhoneloginComponent implements OnInit, AfterViewInit {
   phoneNumber: string;
@@ -35,9 +41,7 @@ export class PhoneloginComponent implements OnInit, AfterViewInit {
       }
     );
 
-    this.windowRef.recaptchaVerifier.render().then((widgetId) => {
-      this.windowRef.recaptchaWidgetId = widgetId;
-    });
+    this.windowRef.recaptchaVerifier.render();
   }
 
   signIn(phone: string) {
