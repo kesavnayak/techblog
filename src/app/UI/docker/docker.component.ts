@@ -32,12 +32,26 @@ export class DockerComponent implements OnInit {
           questionNo: e.payload.doc.data()['QuestionNo'],
           iscollapse: e.payload.doc.data()['IsCollapse'],
           questionRef: e.payload.doc.data()['QuestionRef'],
+          questionshare:
+            'Q ' +
+            e.payload.doc.data()['QuestionNo'] +
+            e.payload.doc.data()['QuestionText'] +
+            '\n' +
+            'Answer : ' +
+            this.htmlToText(e.payload.doc.data()['QuestionDesc']),
         };
       });
+
       this.questions = this.questions.sort((item1, item2) =>
         item1.questionNo > item2.questionNo ? 1 : -1
       );
     });
+  }
+
+  htmlToText(html: string) {
+    const tmp = document.createElement('DIV');
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || '';
   }
 
   goBack() {

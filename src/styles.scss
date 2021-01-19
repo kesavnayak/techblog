@@ -37,3 +37,16 @@ table {
   position: fixed;
   bottom: 0px;
 }
+
+.dot {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  font-size: 18px;
+  i {
+    color: white;
+  }
+}
