@@ -33,11 +33,11 @@ export class DockerComponent implements OnInit {
           iscollapse: e.payload.doc.data()['IsCollapse'],
           questionRef: e.payload.doc.data()['QuestionRef'],
           questionshare:
-            'Q ' +
+            'Q' +
             e.payload.doc.data()['QuestionNo'] +
+            ' ' +
             e.payload.doc.data()['QuestionText'] +
-            '\n' +
-            'Answer : ' +
+            '\n Answer : ' +
             this.htmlToText(e.payload.doc.data()['QuestionDesc']),
         };
       });

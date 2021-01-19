@@ -58,7 +58,7 @@
                   <div class="col-4">
                     <span class="dot" style="background-color: green">
                       <a
-                        href="whatsapp://send?text={{ question.questionshare }}"
+                        [href]="sanitize('whatsapp://send?text={{ question.questionshare }}')"
                       >
                         <i class="fab fa-whatsapp"></i>
                       </a>
