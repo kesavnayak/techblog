@@ -3,6 +3,7 @@ import { QuestionService } from 'src/app/service/question.service';
 import { SidenavService } from 'src/app/sidebar/sidenav.service';
 import { Location } from '@angular/common';
 import jsPDF from 'jspdf';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-docker',
@@ -14,7 +15,8 @@ export class DockerComponent implements OnInit {
   constructor(
     public questionService: QuestionService,
     public sideNavService: SidenavService,
-    private location: Location
+    private location: Location,
+    public sanitizer: DomSanitizer
   ) {}
 
   ngOnInit(): void {
@@ -81,5 +83,9 @@ export class DockerComponent implements OnInit {
 
     //doc.html(question.questionDesc);
     doc.save('Q' + question.questionNo + '.' + question.questionText + '.pdf');
+  }
+
+  sanitize(url: string) {
+    return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 }
