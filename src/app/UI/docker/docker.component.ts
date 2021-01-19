@@ -4,6 +4,7 @@ import { SidenavService } from 'src/app/sidebar/sidenav.service';
 import { Location } from '@angular/common';
 import jsPDF from 'jspdf';
 import { DomSanitizer } from '@angular/platform-browser';
+import { SnackbarService } from 'src/app/plugin/snackbar.service';
 
 @Component({
   selector: 'app-docker',
@@ -16,7 +17,8 @@ export class DockerComponent implements OnInit {
     public questionService: QuestionService,
     public sideNavService: SidenavService,
     private location: Location,
-    public sanitizer: DomSanitizer
+    public sanitizer: DomSanitizer,
+    public snackbar: SnackbarService
   ) {}
 
   ngOnInit(): void {
@@ -87,5 +89,15 @@ export class DockerComponent implements OnInit {
 
   sanitize(url: string) {
     return this.sanitizer.bypassSecurityTrustUrl(url);
+  }
+
+  copyToClipboard(item) {
+    document.addEventListener('copy', (e: ClipboardEvent) => {
+      e.clipboardData.setData('text/plain', item);
+      e.preventDefault();
+      document.removeEventListener('copy', null);
+    });
+    document.execCommand('copy');
+    this.snackbar.open('Question Copied Successfully');
   }
 }
