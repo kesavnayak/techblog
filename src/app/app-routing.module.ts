@@ -18,6 +18,7 @@ import { SignupComponent } from './UI/signup/signup.component';
 import { UixComponent } from './UI/uix/uix.component';
 import { WebapiComponent } from './UI/webapi/webapi.component';
 import { XamarinComponent } from './UI/xamarin/xamarin.component';
+import { SqlserverComponent } from './UI/sqlserver/sqlserver.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,7 @@ const routes: Routes = [
       { path: 'interview/Azure', component: AzureComponent },
       { path: 'interview/Ef', component: EfComponent },
       { path: 'interview/Docker', component: DockerComponent },
+      { path: 'interview/SqlServer', component: SqlserverComponent },
       { path: 'interview', component: InterviewquestionsComponent },
       { path: 'company', component: CompanyquestionsComponent },
       { path: 'uix', component: UixComponent },

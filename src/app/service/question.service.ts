@@ -26,4 +26,8 @@ export class QuestionService {
   getDocker() {
     return this.firestore.collection('Docker').snapshotChanges();
   }
+
+  getSqlServer(){
+    return this.firestore.collection('SqlServer').snapshotChanges();
+  }
 }

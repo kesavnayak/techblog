@@ -51,6 +51,7 @@ import { DockerComponent } from './UI/docker/docker.component';
 import { PhoneloginComponent } from './UI/phonelogin/phonelogin.component';
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SqlserverComponent } from './UI/sqlserver/sqlserver.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     EfComponent,
     DockerComponent,
     PhoneloginComponent,
+    SqlserverComponent,
   ],
   imports: [
     BrowserModule,
