@@ -34,6 +34,11 @@ export class LoginService {
     return user !== null ? user.phoneNumber : '';
   }
 
+  get getImage(): string {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return user !== null ? (user.photoURL !== null ? user.photoURL : 'https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg' ) : 'https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg';
+  }
+
   get windowRef() {
     return window;
   }

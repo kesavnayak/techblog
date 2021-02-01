@@ -221,7 +221,7 @@
           <img
             *ngIf="loginService.isLoggedIn"
             class="img-profile rounded-circle"
-            src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg"
+            [src]="loginService.getImage"
           />
         </a>
         <div
