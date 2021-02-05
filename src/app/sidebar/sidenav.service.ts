@@ -20,7 +20,7 @@ export class SidenavService {
   }
 
   hideShowSideNav(): void {
-    this.hideSideNav = true;
+    //this.hideSideNav = true;
   }
 
   toggleAlert(): void {

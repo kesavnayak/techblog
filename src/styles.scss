@@ -50,3 +50,14 @@ table {
     color: white;
   }
 }
+
+.fixedHeight {
+  align-items: center;
+  justify-content: flex-start;
+  height: calc(100vh - 159px);
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: auto;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
