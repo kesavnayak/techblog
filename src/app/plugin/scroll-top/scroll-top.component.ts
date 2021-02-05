@@ -39,6 +39,7 @@ export class ScrollTopComponent implements OnInit {
     })();
   }
   ngOnInit() {
+    document.getElementById('scrollTop').style.display="none";
     window.addEventListener('scroll', this.onWindowScroll, true);
   }
 }
