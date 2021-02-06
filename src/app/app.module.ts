@@ -52,6 +52,9 @@ import { PhoneloginComponent } from './UI/phonelogin/phonelogin.component';
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SqlserverComponent } from './UI/sqlserver/sqlserver.component';
+import { ArticleListComponent } from './UI/articles/article-list/article-list.component';
+import { ArticlesComponent } from './UI/articles/articles/articles.component';
+import { ArticleComponent } from './UI/articles/article/article.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +84,9 @@ import { SqlserverComponent } from './UI/sqlserver/sqlserver.component';
     DockerComponent,
     PhoneloginComponent,
     SqlserverComponent,
+    ArticleListComponent,
+    ArticlesComponent,
+    ArticleComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,9 @@ import { UixComponent } from './UI/uix/uix.component';
 import { WebapiComponent } from './UI/webapi/webapi.component';
 import { XamarinComponent } from './UI/xamarin/xamarin.component';
 import { SqlserverComponent } from './UI/sqlserver/sqlserver.component';
+import { ArticleListComponent } from './UI/articles/article-list/article-list.component';
+import { ArticlesComponent } from './UI/articles/articles/articles.component';
+import { ArticleComponent } from './UI/articles/article/article.component';
 
 const routes: Routes = [
   {
@@ -41,6 +44,9 @@ const routes: Routes = [
       { path: 'company', component: CompanyquestionsComponent },
       { path: 'uix', component: UixComponent },
       { path: 'uix/xamarin', component: XamarinComponent },
+      { path: 'articlelist', component: ArticleListComponent },
+      { path: 'articlelist/articles/:id', component: ArticlesComponent },
+      { path: 'articlelist/articles/:id/article/:id', component: ArticleComponent },
     ],
   },
   { path: 'login', component: LoginComponent },

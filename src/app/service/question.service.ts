@@ -30,4 +30,10 @@ export class QuestionService {
   getSqlServer(){
     return this.firestore.collection('SqlServer').snapshotChanges();
   }
+
+  getArticles(){
+    return this.firestore.collection('Articles').snapshotChanges();
+  }
+
+
 }

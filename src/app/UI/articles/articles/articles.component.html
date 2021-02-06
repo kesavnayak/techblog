@@ -1,0 +1,56 @@
+<!--Back Button-->
+<a href="javascript:void(0)" (click)="goBack()">
+  <i class="fas fa-chevron-circle-left" style="font-size: 18px"></i>
+</a>
+
+<div class="row" *ngFor="let card of cards" routerLink="article/{{ card.id }}">
+  <div class="sample-column card-wrapper">
+    <igx-card>
+      <igx-card-media height="auto">
+        <img [src]="card.Image" />
+      </igx-card-media>
+
+      <igx-card-header>
+        <h5 igxCardHeaderTitle>{{ card.Title }}</h5>
+        <div>
+          <p igxCardHeaderSubtitle>
+            {{ card.Subtitle }} |
+            {{ card.Publish.toDate() | date: "MMMM d, y" }}
+          </p>
+        </div>
+      </igx-card-header>
+
+      <igx-card-content>
+        <h3>Features</h3>
+        <ul>
+          <li *ngFor="let f of card.Feature">{{ f }}</li>
+        </ul>
+      </igx-card-content>
+
+      <igx-card-content
+        style="overflow-wrap: break-word; word-wrap: break-word; hyphens: auto"
+      >
+        <h3>References</h3>
+        <ul>
+          <li *ngFor="let f of card.Reference">
+            <a href="{{ f }}">{{ f }}</a>
+          </li>
+        </ul>
+      </igx-card-content>
+
+      <igx-card-actions>
+        <button igxButton igxRipple routerLink="article/{{ card.id }}">
+          read more
+        </button>
+        <button
+          igxButton="icon"
+          igxRipple
+          igxRippleCentered="true"
+          *ngFor="let icon of card.icons"
+        >
+          <igx-icon>{{ icon }}</igx-icon>
+        </button>
+      </igx-card-actions>
+    </igx-card>
+  </div>
+</div>

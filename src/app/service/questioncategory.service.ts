@@ -13,4 +13,8 @@ export class QuestioncategoryService {
   getQuestionCategories() {
     return this.firestore.collection('questionCategory').snapshotChanges();
   }
+
+  getArticleList(){
+    return this.firestore.collection('ArticleList').snapshotChanges();
+  }
 }
