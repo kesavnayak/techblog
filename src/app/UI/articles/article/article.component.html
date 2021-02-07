@@ -1,1 +1,39 @@
-<p>article works!</p>
+<!--Back Button-->
+<a href="javascript:void(0)" (click)="goBack()">
+  <i class="fas fa-chevron-circle-left" style="font-size: 18px"></i>
+</a>
+
+<div class="row" *ngFor="let card of cards">
+  <div class="sample-column card-wrapper">
+    <igx-card>
+      <igx-card-media height="auto">
+        <img [src]="card.Image" />
+      </igx-card-media>
+
+      <igx-card-header>
+        <h5 igxCardHeaderTitle>{{ card.Title }}</h5>
+        <div>
+          <p igxCardHeaderSubtitle>
+            {{ card.Subtitle }} |
+            {{ card.Publish.toDate() | date: "MMMM d, y" }}
+          </p>
+        </div>
+      </igx-card-header>
+
+      <igx-card-content>
+        <p [innerHTML]="card.Feature"></p>
+      </igx-card-content>
+
+      <igx-card-content
+        style="overflow-wrap: break-word; word-wrap: break-word; hyphens: auto"
+      >
+        <h3>References</h3>
+        <ul>
+          <li *ngFor="let f of card.Reference">
+            <a href="{{ f }}">{{ f }}</a>
+          </li>
+        </ul>
+      </igx-card-content>
+    </igx-card>
+  </div>
+</div>

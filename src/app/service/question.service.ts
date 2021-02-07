@@ -27,13 +27,15 @@ export class QuestionService {
     return this.firestore.collection('Docker').snapshotChanges();
   }
 
-  getSqlServer(){
+  getSqlServer() {
     return this.firestore.collection('SqlServer').snapshotChanges();
   }
 
-  getArticles(){
+  getArticles() {
     return this.firestore.collection('Articles').snapshotChanges();
   }
 
-
+  getArticle() {
+    return this.firestore.collection('Article').snapshotChanges();
+  }
 }
