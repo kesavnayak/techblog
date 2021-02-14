@@ -4,6 +4,7 @@ import { SidenavService } from 'src/app/sidebar/sidenav.service';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { CommentService } from 'src/app/service/comment.service';
 
 @Component({
   selector: 'app-article',
@@ -11,17 +12,21 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./article.component.scss'],
 })
 export class ArticleComponent implements OnInit {
+  comments: string;
+  count: number;
   constructor(
     public questionService: QuestionService,
     public sideNavService: SidenavService,
     private location: Location,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private commentService: CommentService
   ) {}
 
   public cards: any;
   private routeId: string;
 
   ngOnInit(): void {
+    this.count = 0;
     this.route.params.subscribe((params) => {
       this.routeId = params['id']; //log the value of id
     });
@@ -44,12 +49,24 @@ export class ArticleComponent implements OnInit {
       });
 
       this.cards = this.cards.filter((item) => item.Id === this.routeId);
-      //.sort((item1, item2) => (item1.cardno > item2.cardno ? 1 : -1));
     });
   }
 
   goBack() {
     this.location.back();
     console.log('goBack()...');
+  }
+
+  receiveComment($event) {
+    this.comments = $event;
+    this.count = 0;
+    for (let i = 0; i < this.comments.length; i++) {
+      if (this.comments[i]['approval']) this.count++;
+    }
+  }
+
+  recieveCount($event) {
+    this.comments = $event;
+    this.count = this.comments.length;
   }
 }

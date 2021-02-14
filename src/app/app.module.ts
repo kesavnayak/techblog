@@ -56,6 +56,11 @@ import { ArticleListComponent } from './UI/articles/article-list/article-list.co
 import { ArticlesComponent } from './UI/articles/articles/articles.component';
 import { ArticleComponent } from './UI/articles/article/article.component';
 
+import { CommentboxComponent } from './comment-box/commentbox/commentbox.component';
+import { CommentsComponent } from './comment-box/comments/comments.component';
+import { ChildboxComponent } from './comment-box/childbox/childbox.component';
+import { DatacontainerDirective } from './comment-box/comments/comments.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,6 +92,10 @@ import { ArticleComponent } from './UI/articles/article/article.component';
     ArticleListComponent,
     ArticlesComponent,
     ArticleComponent,
+    CommentboxComponent,
+    CommentsComponent,
+    ChildboxComponent,
+    DatacontainerDirective,
   ],
   imports: [
     BrowserModule,

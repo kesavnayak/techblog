@@ -30,6 +30,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "angular-font-awesome": "^3.1.2",
     "firebase": "^8.2.1",
+    "guid-typescript": "^1.0.9",
     "igniteui-angular": "^11.0.9",
     "jspdf": "^1.4.1",
     "ngx-sharebuttons": "^8.0.5",

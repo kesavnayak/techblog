@@ -1,0 +1,45 @@
+<div class="comments" *ngIf="postComment !== undefined">
+  <h6 *ngIf="postComment?.length < 1">No Comments Found</h6>
+  <ul *ngIf="postComment?.length > 0">
+    <li *ngFor="let post of postComment; let i = index">
+      <div class="col-12 col-sm-12 comment-container" *ngIf="post['approval']">
+        <p>{{ post["commentTxt"] }}</p>
+        <div class="actions" style="padding: 10px 10px">
+          <span> {{ post["currentDate"] | date: "MMMM d, y" }}</span>
+          <span class="divider"></span>
+          <button
+            class="btn btn-sm btn-info"
+            (click)="replyComment(i, post['commentId'])"
+          >
+            Reply
+          </button>
+          <span class="divider"></span>
+          <button
+            class="btn btn-sm btn-danger"
+            (click)="removeComment(post['commentId'])"
+          >
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+        <div class="childCommentBox">
+          <div datacontainer></div>
+          <ul *ngIf="post['replyComment'].length > 0">
+            <li *ngFor="let rl of post['replyComment']">
+              <div
+                class="col-12 col-sm-12 comment-container"
+                *ngIf="rl['commentStatus']"
+              >
+                <p>
+                  <strong>
+                    {{ rl["currentDate"] | date: "MMMM d, y" }}:
+                  </strong>
+                  {{ rl.commentTxt }}
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
