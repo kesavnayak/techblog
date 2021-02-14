@@ -23,7 +23,7 @@ export class ArticleComponent implements OnInit {
   ) {}
 
   public cards: any;
-  private routeId: string;
+  public routeId: string;
 
   ngOnInit(): void {
     this.count = 0;
