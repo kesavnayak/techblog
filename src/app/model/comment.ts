@@ -4,4 +4,5 @@ export class PostComment {
   public currentDate: Date;
   public replyComment: string[];
   public approval: boolean;
+  public postId: string;
 }

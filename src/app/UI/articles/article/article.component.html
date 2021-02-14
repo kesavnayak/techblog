@@ -49,6 +49,7 @@
           <div class="comment-form">
             <app-commentbox
               (usercomment)="receiveComment($event)"
+              [postId]="routeId"
             ></app-commentbox>
           </div>
         </div>

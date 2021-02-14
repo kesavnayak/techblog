@@ -106,6 +106,7 @@ export class CommentsComponent implements OnInit, OnChanges {
           currentDate: e.payload.doc.data()['currentDate'],
           replyComment: e.payload.doc.data()['replyComment'],
           approval: e.payload.doc.data()['approval'],
+          postId: e.payload.doc.data()['postId'],
         };
       });
     });

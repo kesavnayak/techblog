@@ -6,6 +6,7 @@ import {
   OnInit,
   Output,
   EventEmitter,
+  Input,
 } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CommentService } from './../../service/comment.service';
@@ -21,6 +22,7 @@ export class CommentboxComponent implements OnInit {
   commentInfo: Array<object> = [];
   submitted: Boolean = false;
   @Output() usercomment = new EventEmitter();
+  @Input() postId: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -52,6 +54,7 @@ export class CommentboxComponent implements OnInit {
       return false;
     } else {
       this.commentInfo.push({
+        postId: this.postId,
         currentDate: Date.now(),
         commentTxt: this.commentForm.controls['comment'].value,
         approval: false,
@@ -82,6 +85,7 @@ export class CommentboxComponent implements OnInit {
           currentDate: e.payload.doc.data()['currentDate'],
           replyComment: e.payload.doc.data()['replyComment'],
           approval: e.payload.doc.data()['approval'],
+          postId: e.payload.doc.data()['postId'],
         };
       });
       this.usercomment.emit(this.commentInfo);

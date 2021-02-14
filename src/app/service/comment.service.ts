@@ -15,6 +15,7 @@ export class CommentService {
     com.currentDate = comment['currentDate'];
     com.replyComment = comment['replyComment'];
     com.approval = comment['approval'];
+    com.postId = comment['postId'];
 
     const comments = JSON.parse(JSON.stringify(com));
     return this.firestore.collection('Comments').add(comments);
