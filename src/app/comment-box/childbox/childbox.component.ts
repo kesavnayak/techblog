@@ -41,6 +41,7 @@ export class ChildboxComponent implements OnInit {
           Validators.maxLength(100),
         ],
       ],
+      email: ['', [Validators.required, Validators.email]],
     });
   }
 
@@ -52,6 +53,7 @@ export class ChildboxComponent implements OnInit {
       this.replyComment.push({
         currentDate: new Date(),
         commentTxt: this.childForm.controls['comment'].value,
+        commentEmail: this.childForm.controls['email'].value,
         commentStatus: false,
       });
 

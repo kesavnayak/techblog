@@ -16,6 +16,7 @@ export class CommentService {
     com.replyComment = comment['replyComment'];
     com.approval = comment['approval'];
     com.postId = comment['postId'];
+    com.commentEmail = comment['commentEmail'];
 
     const comments = JSON.parse(JSON.stringify(com));
     return this.firestore.collection('Comments').add(comments);
@@ -26,10 +27,6 @@ export class CommentService {
   }
 
   delete(id: any) {
-    this.firestore.collection('Comments').doc(id).delete();
-  }
-
-  deleteBack(id: any) {
     this.firestore.collection('Comments').doc(id).delete();
   }
 

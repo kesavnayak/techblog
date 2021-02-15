@@ -3,7 +3,10 @@
   <ul *ngIf="postComment?.length > 0">
     <li *ngFor="let post of postComment; let i = index">
       <div class="col-12 col-sm-12 comment-container" *ngIf="post['approval']">
-        <p>{{ post["commentTxt"] }}</p>
+        <p style="background: lightgray">
+          <strong>{{ post["commentEmail"] }} : </strong>
+          {{ post["commentTxt"] }}
+        </p>
         <div class="actions" style="padding: 10px 10px">
           <span> {{ post["currentDate"] | date: "MMMM d, y" }}</span>
           <span class="divider"></span>
@@ -31,7 +34,8 @@
               >
                 <p>
                   <strong>
-                    {{ rl["currentDate"] | date: "MMMM d, y" }}:
+                    {{ rl["currentDate"] | date: "MMMM d, y" }} -
+                    {{ rl["commentEmail"] }} :
                   </strong>
                   {{ rl.commentTxt }}
                 </p>

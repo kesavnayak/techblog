@@ -44,6 +44,7 @@ export class CommentboxComponent implements OnInit {
           Validators.maxLength(100),
         ],
       ],
+      email: ['', [Validators.required, Validators.email]],
     });
   }
 
@@ -57,6 +58,7 @@ export class CommentboxComponent implements OnInit {
         postId: this.postId,
         currentDate: Date.now(),
         commentTxt: this.commentForm.controls['comment'].value,
+        commentEmail: this.commentForm.controls['email'].value,
         approval: false,
         replyComment: [],
       });
@@ -85,6 +87,7 @@ export class CommentboxComponent implements OnInit {
           replyComment: e.payload.doc.data()['replyComment'],
           approval: e.payload.doc.data()['approval'],
           postId: e.payload.doc.data()['postId'],
+          commentEmail: e.payload.doc.data()['commentEmail'],
         };
       });
       this.usercomment.emit(this.commentInfo);

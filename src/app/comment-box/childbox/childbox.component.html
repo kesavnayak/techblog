@@ -1,9 +1,30 @@
 <form [formGroup]="childForm" (ngSubmit)="onSubmit()" style="margin: 10px">
   <div class="form-group">
+    <input
+      type="email"
+      placeholder="Please Enter Email"
+      class="form-control"
+      formControlName="email"
+      [ngClass]="{
+        'is-invalid': submitted && childForm.controls['email'].errors
+      }"
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="submitted && childForm.controls['email'].errors"
+    >
+      <div *ngIf="childForm.controls['email'].errors.required">
+        Email is required
+      </div>
+      <div *ngIf="childForm.controls['email'].errors.email">
+        Email is invalid
+      </div>
+    </div>
     <textarea
       class="form-control"
       placeholder="Leave a comment"
       formControlName="comment"
+      style="margin-top: 10px"
       [ngClass]="{
         'is-invalid': submitted && childForm.controls['comment'].errors
       }"

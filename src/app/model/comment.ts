@@ -5,4 +5,5 @@ export class PostComment {
   public replyComment: string[];
   public approval: boolean;
   public postId: string;
+  public commentEmail: string;
 }

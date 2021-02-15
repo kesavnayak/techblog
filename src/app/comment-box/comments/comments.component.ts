@@ -98,10 +98,10 @@ export class CommentsComponent implements OnInit, OnChanges {
     this.postComment.forEach((element) => {
       if (element['commentId'] === i) {
         element['replyComment'].push(...$event);
-      }
 
-      this.commentService.deleteBack(i);
-      this.commentService.createComments(element);
+        this.commentService.delete(i);
+        this.commentService.createComments(element);
+      }
     });
     console.log(this.reply);
     this.loadComponent = false;
@@ -117,6 +117,7 @@ export class CommentsComponent implements OnInit, OnChanges {
           replyComment: e.payload.doc.data()['replyComment'],
           approval: e.payload.doc.data()['approval'],
           postId: e.payload.doc.data()['postId'],
+          commentEmail: e.payload.doc.data()['commentEmail'],
         };
       });
     });
