@@ -57,6 +57,7 @@
     </div>
     <app-comments
       [postComment]="comments"
+      [postId]="routeId"
       (countComments)="recieveCount($event)"
     ></app-comments>
   </div>

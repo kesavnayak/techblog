@@ -90,6 +90,9 @@ export class CommentboxComponent implements OnInit {
           commentEmail: e.payload.doc.data()['commentEmail'],
         };
       });
+      this.commentInfo = this.commentInfo.filter(
+        (item) => item['postId'] === this.postId
+      );
       this.usercomment.emit(this.commentInfo);
     });
   }
