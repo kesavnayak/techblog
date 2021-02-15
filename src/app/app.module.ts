@@ -61,6 +61,8 @@ import { CommentsComponent } from './comment-box/comments/comments.component';
 import { ChildboxComponent } from './comment-box/childbox/childbox.component';
 import { DatacontainerDirective } from './comment-box/comments/comments.component';
 
+import { ConfirmDialogModule } from './confirm-dialog/confirm-dialog.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -101,6 +103,7 @@ import { DatacontainerDirective } from './comment-box/comments/comments.componen
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ConfirmDialogModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireDatabaseModule,

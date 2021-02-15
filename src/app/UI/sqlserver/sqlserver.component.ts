@@ -9,10 +9,9 @@ import { SnackbarService } from 'src/app/plugin/snackbar.service';
 @Component({
   selector: 'app-sqlserver',
   templateUrl: './sqlserver.component.html',
-  styleUrls: ['./sqlserver.component.scss']
+  styleUrls: ['./sqlserver.component.scss'],
 })
 export class SqlserverComponent implements OnInit {
-
   public questions: any;
   constructor(
     public questionService: QuestionService,
@@ -78,7 +77,6 @@ export class SqlserverComponent implements OnInit {
       '</div>';
 
     doc.fromHTML(data, function () {
-      debugger;
       doc.save(
         'Q' + question.questionNo + '.' + question.questionText + '.pdf'
       );

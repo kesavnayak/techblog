@@ -62,7 +62,6 @@ export class CommentboxComponent implements OnInit {
       });
 
       this.commentInfo.forEach((element) => {
-        debugger;
         if (element['commentId'] == null) {
           this.commentService
             .createComments(element)

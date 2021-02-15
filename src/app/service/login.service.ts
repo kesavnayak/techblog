@@ -36,7 +36,11 @@ export class LoginService {
 
   get getImage(): string {
     const user = JSON.parse(localStorage.getItem('user'));
-    return user !== null ? (user.photoURL !== null ? user.photoURL : 'https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg' ) : 'https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg';
+    return user !== null
+      ? user.photoURL !== null
+        ? user.photoURL
+        : 'https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg'
+      : 'https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg';
   }
 
   get windowRef() {
@@ -64,7 +68,6 @@ export class LoginService {
     //   model.password
     // );
     // if (result != null) {
-    //   debugger;
     //   this.authStore();
     //   this.loading = false;
     //   this.router.navigate(['']);

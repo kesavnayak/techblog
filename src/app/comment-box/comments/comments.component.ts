@@ -12,6 +12,7 @@ import {
   ComponentFactoryResolver,
   AfterContentInit,
 } from '@angular/core';
+import { ConfirmDialogService } from 'src/app/confirm-dialog/confirm-dialog.service';
 import { CommentService } from 'src/app/service/comment.service';
 import { ChildboxComponent } from '../childbox/childbox.component';
 
@@ -46,7 +47,8 @@ export class CommentsComponent implements OnInit, OnChanges {
 
   constructor(
     private resolver: ComponentFactoryResolver,
-    private commentService: CommentService
+    private commentService: CommentService,
+    private confirmDialogService: ConfirmDialogService
   ) {}
 
   ngOnInit() {
@@ -60,8 +62,16 @@ export class CommentsComponent implements OnInit, OnChanges {
   }
 
   removeComment(no) {
-    this.commentService.delete(no);
-    this.countComments.emit(this.postComment);
+    this.confirmDialogService.confirmThis(
+      'Are you sure to delete ?',
+      () => {
+        this.commentService.delete(no);
+        this.countComments.emit(this.postComment);
+      },
+      () => {
+        console.log('No clicked');
+      }
+    );
   }
 
   replyComment(index, no) {

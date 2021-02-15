@@ -77,7 +77,6 @@ export class DockerComponent implements OnInit {
       '</div>';
 
     doc.fromHTML(data, function () {
-      debugger;
       doc.save(
         'Q' + question.questionNo + '.' + question.questionText + '.pdf'
       );

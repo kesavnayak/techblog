@@ -26,9 +26,7 @@ export class CommentService {
   }
 
   delete(id: any) {
-    if (confirm('Delete?')) {
-      this.firestore.collection('Comments').doc(id).delete();
-    }
+    this.firestore.collection('Comments').doc(id).delete();
   }
 
   deleteBack(id: any) {
