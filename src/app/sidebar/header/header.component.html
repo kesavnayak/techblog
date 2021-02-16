@@ -228,8 +228,9 @@
           class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
           aria-labelledby="loginDropdownMenuLink"
         >
+          <h6 class="dropdown-header">Profile</h6>
           <form class="form-inline mr-auto w-100 navbar-login">
-            <div class="dropdown-header" *ngIf="loginService.isLoggedIn">
+            <div class="dropdown-item" *ngIf="loginService.isLoggedIn">
               {{
                 loginService.username == null
                   ? loginService.phoneNumber
