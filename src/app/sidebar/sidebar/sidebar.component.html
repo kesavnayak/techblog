@@ -59,4 +59,32 @@
       (click)="sideNavService.toggleSideNav()"
     ></button>
   </div>
+
+  <div class="theme-switch" style="margin: 40px">
+    <a
+      *ngIf="
+        (themeService.presentTheme$ | async) == 'theme-light';
+        else moonTemplate
+      "
+      (click)="themeService.changeTheme('theme-dark')"
+    >
+      <!-- <img
+        src="https://cdn1.iconfinder.com/data/icons/interface-59/24/brightness-light-up-day-mode-512.png"
+        style="width: 30px"
+        alt="light mode"
+      /> -->
+      <i class="fas fa-sun fa-2x" style="color: white"></i>
+    </a>
+
+    <ng-template #moonTemplate>
+      <a (click)="themeService.changeTheme('theme-light')">
+        <!-- <img
+          src="https://cdn0.iconfinder.com/data/icons/multimedia-solid-30px/30/sun_light_mode_day-512.png"
+          style="width: 30px"
+          alt="dark-mode"
+        /> -->
+        <i class="fas fa-moon fa-2x" style="color: white"></i>
+      </a>
+    </ng-template>
+  </div>
 </ul>

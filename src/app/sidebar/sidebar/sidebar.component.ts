@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Category } from 'src/app/model/category';
 import { CategoryService } from 'src/app/service/category.service';
 import { LoginService } from 'src/app/service/login.service';
+import { ThemeService } from 'src/app/theme.service';
 import { SidenavService } from '../sidenav.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class SidebarComponent implements OnInit {
   constructor(
     public sideNavService: SidenavService,
     public categoryService: CategoryService,
-    public loginService: LoginService
+    public loginService: LoginService,
+    public themeService: ThemeService
   ) {}
 
   ngOnInit(): void {
